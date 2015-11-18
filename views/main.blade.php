@@ -12,12 +12,15 @@
             <div class="swiper-slide">
                 <div class="hide-on-small-and-up"
                      style="height:100%;background:url({{ $config['slide_img2Path'] }}) 50% 100% no-repeat;"></div>
+                    @if(array_get($config, 'slide_videoPath', false))
                     <video id="headervideo" autoplay loop poster="{{ $config['slide_videoPath'] }}">
                         <source src="{{ $config['slide_videoPath'] }}" type="video/mp4">
                     </video>
+                    @endif
             </div>
             <div class="swiper-slide"
-                 style="background-image:url({{ $config['slide_img3Path'] }})"></div>
+                 style="background-image:url({{ $config['slide_img3Path'] }})">
+            </div>
         </div>
         <!-- Add Pagination -->
         <div class="swiper-pagination swiper-pagination-white"></div>

@@ -23,7 +23,7 @@
 
 @section('theme_content')
     <div class="row">
-        <div class="main_content col m12 l12 s12">
+        <div class="main_content col l12 s12">
             <div class="card">
                 {!! $content !!}
             </div>

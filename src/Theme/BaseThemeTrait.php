@@ -122,4 +122,25 @@ trait BaseThemeTrait
     {
         return route(Alice::getIdWith('option.edit'));
     }
+
+    /**
+     * 테마 편집 페이지에서 편집할 수 있는 파일의 목록을 반환한다.
+     *
+     * @return array
+     */
+    public static function getEditFiles()
+    {
+        return [
+            'template' => [
+                'main.blade.php' => Alice::getPath('views/main.blade.php'),
+                'site.blade.php' => Alice::getPath('views/site.blade.php'),
+                'sub.blade.php' => Alice::getPath('views/sub.blade.php'),
+                'theme.blade.php' => Alice::getPath('views/theme.blade.php'),
+            ],
+            'stylesheets' => [
+                'theme.css' => Alice::getPath('assets/css/theme.css'),
+            ]
+        ];
+    }
+
 }

@@ -41,7 +41,7 @@
     </div>
     @endif
 
-    <div class="main_content col m12 {{ $config['no_snb'] !== 'no_snb' ? 'l9' : 'l12' }}">
+    <div class="main_content col s12 {{ $config['no_snb'] !== 'no_snb' ? 'l9' : 'l12' }}">
         <div class="card">
             {!! $content !!}
         </div>
