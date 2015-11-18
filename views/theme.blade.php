@@ -43,7 +43,7 @@
                                     @if($menuItem->hasChild() === false)
                                         <a href="{{ url($menuItem->url) }}"><span>{{ xe_trans($menuItem->title) }}</span></a>
                                     @else
-                                        <a href="#" data-activates="dropdown{{$menuItem->id}}" data-hover="true" class="dropdown-button">
+                                        <a href="{{ url($menuItem->url) }}" data-activates="dropdown{{$menuItem->id}}" data-hover="true" class="dropdown-button">
                                             <span>{{ xe_trans($menuItem->title) }}<i class="xi-angle-down-thin"></i></span>
                                         </a>
                                         <div id="dropdown{{$menuItem->id}}" class="dropdown-content" style="display: none;">
