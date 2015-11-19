@@ -22,6 +22,11 @@
   "extra": {
     "xpressengine": {
       "title": "Alice Theme",
+      "screenshots": [
+        "screenshots/main.png",
+        "screenshots/sub.png",
+        "screenshots/site.png"
+      ],
       "component": {
         "theme/alice@main": {
           "class": "Xpressengine\\Plugins\\Alice\\Theme\\Main",
@@ -39,7 +44,7 @@
           "class": "Xpressengine\\Plugins\\Alice\\Theme\\Site",
           "name": "Alice (for site default)",
           "description": "The First Theme for XpressEngine3. use this to site theme",
-          "screenshot": "/plugins/alice/screenshots/sub.png"
+          "screenshot": "/plugins/alice/screenshots/site.png"
         }
       }
     }
