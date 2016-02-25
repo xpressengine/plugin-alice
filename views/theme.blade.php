@@ -34,8 +34,8 @@
                         <div class="lst menu_lst">
                             <ul>
                                 {{-- loop 1--}}
-                                @foreach($mainMenu as $menuItem)
-                                @if($menuItem->activated === 1 && $menuItem->checkVisiblePermission(Auth::user()))
+                                @foreach($mainMenu->getTree()->getTreeNodes() as $menuItem)
+                                @can('visible', [$menuItem, $mainMenu])
 
                                 <!--[D] 메뉴 선택 시 li.on -->
                                 <li class="@if($menuItem->isSelected())on @endif @if($menuItem->hasChild()) @endif">
@@ -49,22 +49,22 @@
                                         <div id="dropdown{{$menuItem->id}}" class="dropdown-content" style="display: none;">
                                             <ul>
                                                 {{-- loop 2--}}
-                                                @foreach($menuItem->getChildren() as $menuItem2Depth)
-                                                    @if($menuItem2Depth->activated === 1 && $menuItem2Depth->checkVisiblePermission(Auth::user()))
+                                                @foreach($menuItem->leaves as $menuItem2Depth)
+                                                    @can('visible', $menuItem2Depth)
 
                                                         <li class="@if($menuItem2Depth->isSelected())on @endif">
 
                                                             <a href="{{ url($menuItem2Depth->url) }}">{{ xe_trans($menuItem2Depth->title) }}</a>
 
                                                         </li>
-                                                    @endif
+                                                    @endcan
                                                 @endforeach
 
                                             </ul>
                                         </div>
                                     @endif
                                 </li>
-                                @endif
+                                @endcan
                                 @endforeach
                             </ul>
                         </div>
@@ -104,14 +104,16 @@
             <div class="col l3 s12">
                 <h5 class="white-text">{{ $subMenuTitle }}</h5>
                 <ul>
-                @foreach($subMenu as $menuItem)
-                @if($menuItem->activated === 1 && $menuItem->checkVisiblePermission(Auth::user()))
-                    <!--[D] 메뉴 선택 시 li.on -->
-                    <li>
-                        <a href="{{ url($menuItem->url) }}" class="white-text">{{ xe_trans($menuItem->title) }}</a>
-                    </li>
-                @endif
-                @endforeach
+                    @if($subMenu)
+                        @foreach($subMenu->getTree()->getTreeNodes() as $menuItem)
+                        @can('visible', [$menuItem, $subMenu])
+                            <!--[D] 메뉴 선택 시 li.on -->
+                            <li>
+                                <a href="{{ url($menuItem->url) }}" class="white-text">{{ xe_trans($menuItem->title) }}</a>
+                            </li>
+                        @endcan
+                        @endforeach
+                    @endif
                 </ul>
             </div>
             @endforeach
