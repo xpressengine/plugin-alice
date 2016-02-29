@@ -14,6 +14,7 @@
 namespace Xpressengine\Plugins\Alice\Theme;
 
 use Frontend;
+use Xpressengine\Menu\Models\Menu;
 use Xpressengine\Plugins\Alice\Plugin as Alice;
 
 /**
@@ -92,8 +93,8 @@ trait BaseThemeTrait
         $selectedMenuItem = null;
         $menuItems = [];
         if ($menuId !== null) {
-            $mainmenu = \Menu::getMenu($menuId);
-            $menuItems = $mainmenu->getItems();
+            $mainmenu = Menu::find($menuId);
+            $menuItems = $mainmenu->items;
             $currentInstanceId = getCurrentInstanceId() ;
             if ($currentInstanceId !== null && $mainmenu->hasItem($currentInstanceId)) {
                 $mainmenu->setItemSelected($currentInstanceId);
