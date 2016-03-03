@@ -72,11 +72,11 @@ class Plugin extends AbstractPlugin
      *
      * @return boolean 플러그인의 설치 유무
      */
-    public function checkInstall($installedVersion = null)
+    public function checkInstalled($installedVersion = null)
     {
         // implement code
 
-        return parent::checkInstall($installedVersion);
+        return parent::checkInstalled($installedVersion);
     }
 
     /**
