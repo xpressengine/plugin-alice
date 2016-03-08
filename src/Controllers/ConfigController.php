@@ -15,7 +15,7 @@ namespace Xpressengine\Plugins\Alice\Controllers;
 
 use App\Http\Controllers\Controller;
 use Presenter;
-use Theme;
+use XeTheme;
 use Xpressengine\Http\Request;
 use Xpressengine\Plugins\Alice\Plugin as Alice;
 
@@ -33,7 +33,7 @@ class ConfigController extends Controller
     public function edit(Request $request)
     {
 
-        $config = Theme::getThemeConfig($this->configId);
+        $config = XeTheme::getThemeConfig($this->configId);
 
         // mode
         $sel_mode = [
@@ -102,7 +102,7 @@ class ConfigController extends Controller
             ]
         );
 
-        $oldConfig = \Theme::getThemeConfig($this->configId);
+        $oldConfig = \XeTheme::getThemeConfig($this->configId);
 
         // process images
         /** @var \Xpressengine\Storage\Storage $storage */
@@ -146,7 +146,7 @@ class ConfigController extends Controller
             }
         }
 
-        \Theme::setThemeConfig($this->configId, $config);
+        \XeTheme::setThemeConfig($this->configId, $config);
 
         return \Redirect::back()->with('alert', ['type' => 'success', 'message' => '저장되었습니다.']);
     }
