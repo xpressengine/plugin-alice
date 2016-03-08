@@ -14,7 +14,7 @@
 namespace Xpressengine\Plugins\Alice\Controllers;
 
 use App\Http\Controllers\Controller;
-use Presenter;
+use XePresenter;
 use XeTheme;
 use Xpressengine\Http\Request;
 use Xpressengine\Plugins\Alice\Plugin as Alice;
@@ -65,7 +65,7 @@ class ConfigController extends Controller
         $alias = Alice::getIdWith('option.update');
         $formAction = route($alias);
 
-        return Presenter::make(
+        return XePresenter::make(
             Alice::getIdWith('views.config'),
             [
                 'config' => $config,
