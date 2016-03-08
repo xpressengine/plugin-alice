@@ -13,7 +13,7 @@
  */
 namespace Xpressengine\Plugins\Alice\Theme;
 
-use Frontend;
+use XeFrontend;
 use Xpressengine\Plugins\Alice\Plugin as Alice;
 use Xpressengine\Theme\AbstractTheme;
 

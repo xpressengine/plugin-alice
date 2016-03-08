@@ -1,7 +1,7 @@
-{{ Frontend::bodyClass(array_get($config, 'mode')) }}
-{{ Frontend::bodyClass(array_get($config, 'sub')) }}
-{{ Frontend::bodyClass(array_get($config, 'no_spot')) }}
-{{ Frontend::bodyClass(array_get($config, 'no_snb')) }}
+{{ XeFrontend::bodyClass(array_get($config, 'mode')) }}
+{{ XeFrontend::bodyClass(array_get($config, 'sub')) }}
+{{ XeFrontend::bodyClass(array_get($config, 'no_spot')) }}
+{{ XeFrontend::bodyClass(array_get($config, 'no_snb')) }}
 
 <header class="site-header trasition {{ array_get($config, 'header_scroll') }} {{ array_get($config, 'bg_none') }}">
     <nav class="main-navigation" role="navigation">

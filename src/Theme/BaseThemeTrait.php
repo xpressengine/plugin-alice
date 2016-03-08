@@ -13,7 +13,7 @@
  */
 namespace Xpressengine\Plugins\Alice\Theme;
 
-use Frontend;
+use XeFrontend;
 use XeMenu;
 use Xpressengine\Menu\Models\Menu;
 use Xpressengine\Plugins\Alice\Plugin as Alice;
@@ -40,7 +40,7 @@ trait BaseThemeTrait
     {
         $this->loadStyleSheet();
         $this->loadScript();
-        Frontend::meta()->name('viewport')->content(
+        XeFrontend::meta()->name('viewport')->content(
             'width=device-width, initial-scale=1, maximum-scale=1.0'
         )->load();
     }
@@ -53,7 +53,7 @@ trait BaseThemeTrait
     protected function loadStyleSheet()
     {
         // css of theme
-        Frontend::css(
+        XeFrontend::css(
             [
                 Alice::asset('assets/css/swiper2.css'),
                 Alice::asset('assets/css/materialize.css'),
@@ -71,7 +71,7 @@ trait BaseThemeTrait
     protected function loadScript()
     {
         // js for IE, by core
-        Frontend::js(
+        XeFrontend::js(
             [
                 'assets/vendor/html5shiv/dist/html5shiv.min.js',
                 'assets/vendor/respond/dest/respond.min.js'
@@ -79,7 +79,7 @@ trait BaseThemeTrait
         )->appendTo('head')->target('lt IE 9')->load();
 
         // by theme
-        Frontend::js(
+        XeFrontend::js(
             [
                 Alice::asset('assets/js/init.js'),
                 Alice::asset('assets/js/materialize.js'),
