@@ -49,7 +49,7 @@
                                         <div id="dropdown{{$menuItem->id}}" class="dropdown-content" style="display: none;">
                                             <ul>
                                                 {{-- loop 2--}}
-                                                @foreach($menuItem->leaves as $menuItem2Depth)
+                                                @foreach($menuItem->getChildren() as $menuItem2Depth)
                                                     @can('visible', $menuItem2Depth)
 
                                                         <li class="@if($menuItem2Depth->isSelected())on @endif">
