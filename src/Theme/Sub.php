@@ -14,6 +14,7 @@
 namespace Xpressengine\Plugins\Alice\Theme;
 
 use XeFrontend;
+use Xpressengine\Menu\Models\MenuItem;
 use Xpressengine\Plugins\Alice\Plugin as Alice;
 use Xpressengine\Theme\AbstractTheme;
 
@@ -44,33 +45,14 @@ class Sub extends AbstractTheme
         // get configuration data of theme
         $config = $this->getConfig();
 
-        // get menu & selected menu
-        $mainMenu = $this->getMenu($config, 'mainmenu', true);
-        $selectedMenu = $this->selectedMenu;
+        $mainMenu = $this->getMenu($config, 'mainMenu');
+        $subMenu = $this->getMenu($config, 'subMenu');
 
-        // get submenus
-        $subMenus = [];
-        if ($config['submenu1_title']) {
-            $subMenus[$config['submenu1_title']] = $this->getMenu($config, 'submenu1');
-        }
-        if ($config['submenu2_title']) {
-            $subMenus[$config['submenu2_title']] = $this->getMenu($config, 'submenu2');
-        }
-
-        if ($config['no_snb'] !== 'no_snb') {
-            //$ctClass = 'container section';
-            $sideMenu = $this->getMenu($config, 'mainmenu', true);
-        }
-
-        $config['sub'] = 'sub';
-        $config['no_spot'] = '';
-        $config['ct_class'] = 'container section';
+        $currentInstanceId = getCurrentInstanceId() ;
+        $selectedMenu = MenuItem::find($currentInstanceId);
 
         // render html
-        return \View::make(
-            Alice::getIdWith('views.sub'),
-            compact('config', 'mainMenu', 'subMenus', 'selectedMenu', 'sideMenu')
-        );
+        return \View::make(Alice::getIdWith('views.sub'), compact('config', 'mainMenu', 'subMenu', 'selectedMenu'));
     }
 
     protected function loadAssets()

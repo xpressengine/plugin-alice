@@ -39,12 +39,6 @@
           "name": "Alice (for sub)",
           "description": "The First Theme for XpressEngine3. use this to sub page",
           "screenshot": "/plugins/alice/screenshots/sub.png"
-        },
-        "theme/alice@site": {
-          "class": "Xpressengine\\Plugins\\Alice\\Theme\\Site",
-          "name": "Alice (for site default)",
-          "description": "The First Theme for XpressEngine3. use this to site theme",
-          "screenshot": "/plugins/alice/screenshots/site.png"
         }
       }
     }

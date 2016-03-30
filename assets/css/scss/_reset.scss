@@ -1,0 +1,91 @@
+/*reset*/
+
+header {
+  .brand-area h1, nav .nav-list {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.content {
+  &.welcome h2, &.involve .involve-inner h2 {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.stater-list {
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  p {
+    margin: 0;
+    padding: 0;
+  }
+  &.stater .start-guide {
+    dl, dd {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+.footer {
+  h3, ul {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.footer-copy p, .footer .footer-text, .content.support .xe-col-md-4 .support-txt .table-txt dl, .snb ul, .plugin-area ul {
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  &.welcome .link-info, &.involve .involve-inner a {
+    text-decoration: none;
+  }
+}
+
+.footer {
+  .menu-list li a, h3 a, .footer-copy a {
+    text-decoration: none;
+  }
+}
+
+nav .nav-list {
+  text-decoration: none;
+  .sub-menu .sub-menu-list {
+    text-decoration: none;
+  }
+}
+
+.link-brand, .content.support .xe-col-md-4 .support-txt .table-txt a, .sub-container .snb li a {
+  text-decoration: none;
+}
+
+.stater-list, .footer ul, .snb li, .plugin-area li {
+  list-style: none;
+}
+
+.blind {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}

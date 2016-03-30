@@ -82,23 +82,30 @@ class ConfigController extends Controller
     {
         $config = $request->only(
             [
-                'title',
-                'mainmenu',
-                'submenu1',
-                'submenu1_title',
-                'submenu2',
-                'submenu2_title',
-                'slide_img1',
-                'slide_img2',
-                'slide_img3',
-                'slide_video',
-                'sub_bg',
-                'sidemenu2',
-                'sidemenu_title',
-                'mode',
-                'no_snb',
-                'bg_none',
-                'header_scroll',
+                'logoType',
+                'logoText',
+                'useColorSet',
+                'colorSetValue',
+                'mainMenu',
+                'mainContentsAreaType',
+                'mainMenuTheme',
+                'mainMenuFixPosition',
+                'subMenuThemeAndTopBanner',
+                'subContentsAreaType',
+                'slide1TitleText',
+                'slide1SubText',
+                'slide2TitleText',
+                'slide2SubText',
+                'slide3TitleText',
+                'slide3SubText',
+                'subMenu',
+                'footerLogoType',
+                'footerLogoText',
+                'footerContents',
+                'copyRight',
+                'useFooterLinks',
+                'footerLink',
+                'footerLinkIcon',
             ]
         );
 
@@ -111,11 +118,12 @@ class ConfigController extends Controller
         $media = app('xe.media');
 
         $imageInputs = [
-            'slide_img1',
-            'slide_img2',
-            'slide_img3',
-            'slide_video',
-            'sub_bg',
+            'logoImage',
+            'subTopImage',
+            'slide1Image',
+            'slide2Image',
+            'slide3Image',
+            'footerLogoImage',
         ];
 
         foreach ($imageInputs as $key) {
@@ -135,7 +143,7 @@ class ConfigController extends Controller
                 $file = $storage->upload($uploadedFile, Alice::getId(), null, 'plugin');
 
                 $mediaFile = $media->make($file);
-                $fileId = $file->getId();
+                $fileId = $file->id;
                 $filePath = $mediaFile->url();
 
                 $config[$configId] = $fileId;

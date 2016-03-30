@@ -16,6 +16,7 @@ namespace Xpressengine\Plugins\Alice\Theme;
 use XeFrontend;
 use XeMenu;
 use Xpressengine\Menu\Models\Menu;
+use Xpressengine\Menu\Models\MenuItem;
 use Xpressengine\Plugins\Alice\Plugin as Alice;
 
 /**
@@ -41,7 +42,7 @@ trait BaseThemeTrait
         $this->loadStyleSheet();
         $this->loadScript();
         XeFrontend::meta()->name('viewport')->content(
-            'width=device-width, initial-scale=1, maximum-scale=1.0'
+            'width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no'
         )->load();
     }
 
@@ -55,10 +56,9 @@ trait BaseThemeTrait
         // css of theme
         XeFrontend::css(
             [
-                Alice::asset('assets/css/swiper2.css'),
-                Alice::asset('assets/css/materialize.css'),
-                Alice::asset('assets/css/xo_font.css'),
-                Alice::asset('assets/css/theme.css'),
+                Alice::asset('assets/css/owl.carousel.css'),
+                Alice::asset('assets/css/layout.css'),
+                'http://cdn.jsdelivr.net/xeicon/2.0.0/xeicon.min.css',
             ]
         )->load();
     }
@@ -81,9 +81,9 @@ trait BaseThemeTrait
         // by theme
         XeFrontend::js(
             [
-                Alice::asset('assets/js/init.js'),
-                Alice::asset('assets/js/materialize.js'),
-                Alice::asset('assets/js/swiper2.js'),
+                Alice::asset('assets/js/owl.carousel.min.js'),
+                Alice::asset('assets/js/layout.js'),
+                Alice::asset('assets/js/jquery.parallax-1.1.3.js'),
             ]
         )->appendTo('head')->load();
     }
@@ -94,26 +94,12 @@ trait BaseThemeTrait
         $selectedMenuItem = null;
 
         $menu = null;
-//        $menuItems = [];
         if ($menuId !== null) {
-//            $mainmenu = XeMenu::getMenu($menuId);
-//            $menuItems = $mainmenu->getItems();
-//            $currentInstanceId = getCurrentInstanceId() ;
-//            if ($currentInstanceId !== null && $mainmenu->hasItem($currentInstanceId)) {
-//                $mainmenu->setItemSelected($currentInstanceId);
-//
-//                if($setSelected) {
-//                    $this->selectedMenu = $mainmenu->getItem($currentInstanceId);
-//                }
-//            }
-
             $menu = Menu::find($menuId);
-
             // pre load
             app('xe.permission')->loadBranch($menuId);
         }
 
-//        return $menuItems;
         return $menu;
     }
 

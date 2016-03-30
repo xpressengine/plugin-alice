@@ -1,0 +1,279 @@
+@media (min-width: 1068px) {
+  /*header color option*/
+  /*black mode*/
+  .black-header {
+    header {
+      &.fixed-header {
+        background-color: #000;
+        nav .nav-list li a {
+          color: #fff;
+        }
+      }
+      background-color: #000;
+      nav .nav-list .sub-menu-list > li > a, &.fixed-header .plugin-area .plugin {
+        color: #fff;
+      }
+    }
+    &.no-spot header {
+      nav .nav-list li a, .plugin-area .plugin {
+        color: #fff;
+      }
+    }
+    header {
+      &.fixed-header nav .nav-list .sub-menu > a .ico-arrow {
+        border-color: #fff transparent transparent transparent;
+      }
+      nav .nav-list .sub-menu {
+        > a .ico-arrow {
+          border-color: #fff transparent transparent transparent;
+        }
+        .sub-menu-list {
+          background-color: #000;
+        }
+      }
+    }
+  }
+  /*white mode*/
+  .white-header {
+    header {
+      &.fixed-header {
+        background-color: #fff;
+      }
+      background-color: #fff;
+      nav .nav-list li a, .plugin-area .plugin {
+        color: #000;
+      }
+      nav .nav-list .sub-menu {
+        > a .ico-arrow {
+          border-color: #000 transparent transparent transparent;
+        }
+        .sub-menu-list {
+          background-color: #fff;
+        }
+      }
+    }
+    .sub-spot h2 {
+      padding-top: 70px;
+    }
+  }
+  .black-header .sub-spot h2 {
+    padding-top: 70px;
+  }
+  /*hover, on color*/
+  .body header {
+    nav .nav-list {
+      li.on > a, .sub-menu-list > li.on > a {
+        color: $brown-color;
+      }
+      .sub-menu {
+        .sub-menu.open a .ico-arrow {
+          border-color: $brown-color transparent transparent transparent;
+        }
+        &.open > a {
+          .ico-arrow {
+            border-color: $brown-color transparent transparent transparent;
+          }
+          color: $brown-color;
+        }
+      }
+    }
+    &.fixed-header nav .nav-list .sub-menu.open > a .ico-arrow {
+      border-color: $brown-color transparent transparent transparent;
+    }
+  }
+  /*.body header nav .nav-list .sub-menu .sub-menu a:hover .ico-arrow,*/
+  /*fixed header option*/
+  .none-fixed-header header.fixed-header {
+    position: absolute;
+  }
+}
+
+/*color set*/
+
+.blue-theme {
+  header {
+    nav .nav-list .sub-menu {
+      &.open > a .ico-arrow, .sub-menu.open a .ico-arrow {
+        border-color: $blue-color transparent transparent transparent;
+      }
+    }
+    .link-brand, nav .nav-list .sub-menu.open > a {
+      color: $blue-color;
+    }
+  }
+  nav .nav-list .sub-menu.open > a, .spot-area .item-slide .slide-text strong {
+    color: $blue-color;
+  }
+  .sub-container .snb li {
+    &.on a, &.open > a {
+      color: $blue-color;
+    }
+  }
+  .spot-area .owl-controls .owl-nav {
+    .owl-prev:hover, .owl-next:hover {
+      color: $blue-color;
+    }
+  }
+  .footer {
+    .menu-list li {
+      &.on a, a:hover {
+        color: $blue-color;
+      }
+    }
+    .footer-copy a, .link-area a:hover {
+      color: $blue-color;
+    }
+  }
+  .content {
+    &.stater .start-guide {
+      i, dd a:hover {
+        color: $blue-color;
+      }
+    }
+    &.involve .involve-inner a, &.support .xe-col-md-4 .support-txt .table-txt a {
+      color: $blue-color;
+    }
+  }
+  .spot-area .owl-controls {
+    .owl-dot.active span, &.clickable .owl-dot:hover span {
+      background: $blue-color;
+    }
+    .owl-nav {
+      .owl-prev:hover:after, .owl-next:hover:after {
+        background: $blue-color;
+      }
+    }
+  }
+  &.txt-banner .sub-spot {
+    background: $blue-color;
+  }
+  .sub-container .snb li {
+    &.open > a:after, ul li.on > a:after {
+      background: $blue-color;
+    }
+  }
+  .content {
+    &.welcome .link-info:hover, &.involve .involve-inner a:after, &.support .xe-col-md-4 .support-txt .table-txt a:after {
+      background: $blue-color;
+    }
+    &.parallax .rectangle {
+      border-color: $blue-color;
+    }
+  }
+}
+
+@media (min-width: 1068px) {
+  .blue-theme header {
+    nav .nav-list .sub-menu-list > a:hover .ico-arrow, &.fixed-header nav .nav-list .sub-menu.open > a .ico-arrow {
+      border-color: $blue-color transparent transparent transparent;
+    }
+    nav .nav-list {
+      .sub-menu {
+        .sub-menu.open a .ico-arrow {
+          border-color: $blue-color transparent transparent transparent;
+        }
+        &.open > a {
+          color: $blue-color;
+        }
+      }
+      li.on > a, .sub-menu-list > li.on > a {
+        color: $blue-color;
+      }
+    }
+  }
+}
+
+/*red theme*/
+
+.red-theme {
+  header {
+    nav .nav-list .sub-menu {
+      &.open > a .ico-arrow, .sub-menu.open a .ico-arrow {
+        border-color: $red-color transparent transparent transparent;
+      }
+    }
+    .link-brand, nav .nav-list .sub-menu.open > a {
+      color: $red-color;
+    }
+  }
+  nav .nav-list .sub-menu.open > a, .spot-area .item-slide .slide-text strong {
+    color: $red-color;
+  }
+  .sub-container .snb li {
+    &.on a, &.open > a {
+      color: $red-color;
+    }
+  }
+  .spot-area .owl-controls .owl-nav {
+    .owl-prev:hover, .owl-next:hover {
+      color: $red-color;
+    }
+  }
+  .footer {
+    .menu-list li {
+      &.on a, a:hover {
+        color: $red-color;
+      }
+    }
+    .footer-copy a, .link-area a:hover {
+      color: $red-color;
+    }
+  }
+  .content {
+    &.stater .start-guide {
+      i, dd a:hover {
+        color: $red-color;
+      }
+    }
+    &.involve .involve-inner a, &.support .xe-col-md-4 .support-txt .table-txt a {
+      color: $red-color;
+    }
+  }
+  .spot-area .owl-controls {
+    .owl-dot.active span, &.clickable .owl-dot:hover span {
+      background: $red-color;
+    }
+    .owl-nav {
+      .owl-prev:hover:after, .owl-next:hover:after {
+        background: $red-color;
+      }
+    }
+  }
+  &.txt-banner .sub-spot {
+    background: $red-color;
+  }
+  .sub-container .snb li {
+    &.open > a:after, ul li.on > a:after {
+      background: $red-color;
+    }
+  }
+  .content {
+    &.welcome .link-info:hover, &.involve .involve-inner a:after, &.support .xe-col-md-4 .support-txt .table-txt a:after {
+      background: $red-color;
+    }
+    &.parallax .rectangle {
+      border-color: $red-color;
+    }
+  }
+}
+
+@media (min-width: 1068px) {
+  .red-theme header {
+    nav .nav-list .sub-menu-list > a:hover .ico-arrow, &.fixed-header nav .nav-list .sub-menu.open > a .ico-arrow {
+      border-color: $red-color transparent transparent transparent;
+    }
+    nav .nav-list {
+      .sub-menu {
+        .sub-menu.open a .ico-arrow {
+          border-color: $red-color transparent transparent transparent;
+        }
+        &.open > a {
+          color: $red-color;
+        }
+      }
+      li.on > a, .sub-menu-list > li.on > a {
+        color: $red-color;
+      }
+    }
+  }
+}

@@ -43,23 +43,11 @@ class Main extends AbstractTheme
         // get configuration data of theme
         $config = $this->getConfig();
 
-        $mainMenu = $this->getMenu($config, 'mainmenu');
-
-        $subMenus = [];
-        if ($config['submenu1_title']) {
-            $subMenus[$config['submenu1_title']] = $this->getMenu($config, 'submenu1');
-        }
-        if ($config['submenu2_title']) {
-            $subMenus[$config['submenu2_title']] = $this->getMenu($config, 'submenu2');
-        }
-
-        $config['no_snb'] = '';
-        $config['no_spot'] = '';
-        $config['snb'] = '';
-        $config['ct_class'] = '';
+        $mainMenu = $this->getMenu($config, 'mainMenu');
+        $subMenu = $this->getMenu($config, 'subMenu');
 
         // render html
-        return \View::make(Alice::getIdWith('views.main'), compact('config', 'mainMenu', 'subMenus'));
+        return \View::make(Alice::getIdWith('views.main'), compact('config', 'mainMenu', 'subMenu'));
     }
 
     protected function loadAssets()
