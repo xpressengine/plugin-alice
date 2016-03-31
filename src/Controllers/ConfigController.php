@@ -149,8 +149,8 @@ class ConfigController extends Controller
                 $config[$configId] = $fileId;
                 $config[$configPath] = $filePath;
             } else {
-                $config[$configId] = array_get($oldConfig, $configId);
-                $config[$configPath] = array_get($oldConfig, $configPath);
+                $config[$configId] = $oldConfig->get($configId, '');
+                $config[$configPath] = $oldConfig->get($configPath, '');
             }
         }
 
