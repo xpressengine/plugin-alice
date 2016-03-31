@@ -5,7 +5,7 @@
 @section('spot')
     <div class="sub-spot" style="background-image:url({{$config->get('subTopImagePath')}})">
         <div class="table-txt xe-container">
-            <h2>{{ xe_trans($selectedMenu->title) }}</h2>
+            <h2>{{ xe_trans($selectedMenu ? $selectedMenu->title : '') }}</h2>
         </div>
     </div>
 @endsection
