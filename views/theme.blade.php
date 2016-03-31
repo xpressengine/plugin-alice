@@ -5,9 +5,6 @@ $config->get('useColorSet', true) ? $config->get('colorSetValue', '') : '',
 $config->get('subMenuThemeAndTopBanner', '')
 ))}}
 
-<script>
-    $ = XE.$;
-</script>
 <header>
     <div class="xe-container">
         <button class="btn-toggle" type="button">
