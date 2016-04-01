@@ -323,7 +323,7 @@
                                     <div class="form-group">
                                         <label>{{xe_trans('alice::footerLogoImage')}} <small>{{xe_trans('alice::footerLogoImageDescription')}}</small></label>
                                         <div class="list-group-item">
-                                            {!! uio('formFile', ['name' => 'footerLogoImage', 'label' => null, 'image' => $config->get('footerLogoImagePath'), 'types' => ['jpg', 'gif', 'png', 'jpeg'], 'width' => 400, 'height' => 160 ]) !!}
+                                            {!! uio('formImage', ['name' => 'footerLogoImage', 'label' => null, 'image' => $config->get('footerLogoImagePath'), 'types' => ['jpg', 'gif', 'png', 'jpeg'], 'width' => 400, 'height' => 160 ]) !!}
                                         </div>
                                     </div>
                                 </div>
