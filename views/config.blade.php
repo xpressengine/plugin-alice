@@ -50,7 +50,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-sm-12">
-                                    {!! uio('formFile', ['name' => 'logoImage', 'label' => xe_trans('alice::logoImage'), 'description' => xe_trans('alice::logoImageDescription'), 'image' => $config->get('logoImage'), 'types' => ['jpg', 'gif', 'png', 'jpeg'], 'width' => 400, 'height' => 160 ]) !!}
+                                    {!! uio('formImage', ['name' => 'logoImage', 'label' => xe_trans('alice::logoImage'), 'description' => xe_trans('alice::logoImageDescription'), 'image' => $config->get('logoImagePath'), 'types' => ['jpg', 'gif', 'png', 'jpeg'], 'width' => 400, 'height' => 160 ]) !!}
                                 </div>
                             </div>
                             <div class="row">
@@ -185,7 +185,7 @@
                                     <div class="form-group">
                                         <label>{{xe_trans('alice::subTopImage')}}</label>
                                         <div class="list-group-item">
-                                            {!! uio('formFile', ['name' => 'subTopImage', 'label' => null, 'image' => $config->get('subTopImage'), 'types' => ['jpg', 'gif', 'png', 'jpeg'], 'width' => 400, 'height' => 160 ]) !!}
+                                            {!! uio('formImage', ['name' => 'subTopImage', 'label' => null, 'image' => $config->get('subTopImagePath'), 'types' => ['jpg', 'gif', 'png', 'jpeg'], 'width' => 400, 'height' => 160 ]) !!}
                                         </div>
                                     </div>
                                 </div>
@@ -215,7 +215,7 @@
                                     <div class="form-group">
                                         <label>{{xe_trans('alice::slide1Image')}}</label>
                                         <div class="list-group-item">
-                                            {!! uio('formFile', ['name' => 'slide1Image', 'label' => null, 'image' => $config->get('slide1Image'), 'types' => ['jpg', 'gif', 'png', 'jpeg'], 'width' => 400, 'height' => 160 ]) !!}
+                                            {!! uio('formImage', ['name' => 'slide1Image', 'label' => null, 'image' => $config->get('slide1ImagePath'), 'types' => ['jpg', 'gif', 'png', 'jpeg'], 'width' => 400, 'height' => 160 ]) !!}
                                         </div>
                                     </div>
                                 </div>
@@ -235,7 +235,7 @@
                                     <div class="form-group">
                                         <label>{{xe_trans('alice::slide2Image')}}</label>
                                         <div class="list-group-item">
-                                            {!! uio('formFile', ['name' => 'slide2Image', 'label' => null, 'image' => $config->get('slide2Image'), 'types' => ['jpg', 'gif', 'png', 'jpeg'], 'width' => 400, 'height' => 160 ]) !!}
+                                            {!! uio('formImage', ['name' => 'slide2Image', 'label' => null, 'image' => $config->get('slide2ImagePath'), 'types' => ['jpg', 'gif', 'png', 'jpeg'], 'width' => 400, 'height' => 160 ]) !!}
                                         </div>
                                     </div>
                                 </div>
@@ -255,7 +255,7 @@
                                     <div class="form-group">
                                         <label>{{xe_trans('alice::slide3Image')}}</label>
                                         <div class="list-group-item">
-                                            {!! uio('formFile', ['name' => 'slide3Image', 'label' => null, 'image' => $config->get('slide3Image'), 'types' => ['jpg', 'gif', 'png', 'jpeg'], 'width' => 400, 'height' => 160 ]) !!}
+                                            {!! uio('formImage', ['name' => 'slide3Image', 'label' => null, 'image' => $config->get('slide3ImagePath'), 'types' => ['jpg', 'gif', 'png', 'jpeg'], 'width' => 400, 'height' => 160 ]) !!}
                                         </div>
                                     </div>
                                 </div>
@@ -323,7 +323,7 @@
                                     <div class="form-group">
                                         <label>{{xe_trans('alice::footerLogoImage')}} <small>{{xe_trans('alice::footerLogoImageDescription')}}</small></label>
                                         <div class="list-group-item">
-                                            {!! uio('formFile', ['name' => 'footerLogoImage', 'label' => null, 'image' => $config->get('footerLogoImage'), 'types' => ['jpg', 'gif', 'png', 'jpeg'], 'width' => 400, 'height' => 160 ]) !!}
+                                            {!! uio('formFile', ['name' => 'footerLogoImage', 'label' => null, 'image' => $config->get('footerLogoImagePath'), 'types' => ['jpg', 'gif', 'png', 'jpeg'], 'width' => 400, 'height' => 160 ]) !!}
                                         </div>
                                     </div>
                                 </div>

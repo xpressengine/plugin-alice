@@ -110,7 +110,7 @@ trait BaseThemeTrait
      */
     protected static function getConfig()
     {
-        return static::$handler->getThemeConfig('theme/alice@main');
+        return static::$handler->getThemeConfig('theme/alice');
     }
 
     public static function getSettingsURI()

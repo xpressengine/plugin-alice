@@ -29,7 +29,7 @@ use Xpressengine\Storage\File;
  */
 class ConfigController extends Controller
 {
-    protected $configId = 'theme/alice@main';
+    protected $configId = 'theme/alice';
 
     public function edit(Request $request)
     {
