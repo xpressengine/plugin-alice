@@ -18,6 +18,7 @@ use XePresenter;
 use XeTheme;
 use Xpressengine\Http\Request;
 use Xpressengine\Plugins\Alice\Plugin as Alice;
+use Xpressengine\Storage\File;
 
 /**
  * @category    Alice
@@ -106,6 +107,12 @@ class ConfigController extends Controller
                 'useFooterLinks',
                 'footerLink',
                 'footerLinkIcon',
+                'logoImage',
+                'subTopImage',
+                'slide1Image',
+                'slide2Image',
+                'slide3Image',
+                'footerLogoImage'
             ]
         );
 
@@ -132,16 +139,15 @@ class ConfigController extends Controller
             $configPath = $key.'Path';
             if ($uploadedFile !== null) {
                 // remove old logo file
-                if (isset($oldConfig[$configId])) {
+                if (!empty($oldConfig[$configId])) {
                     $oldFileId = $oldConfig[$configId];
-                    $oldFile = $storage->get($oldFileId);
+                    $oldFile = File::find($oldFileId);
                     if ($oldFile) {
                         $storage->remove($oldFile);
                     }
                 }
 
                 $file = $storage->upload($uploadedFile, Alice::getId(), null, 'plugin');
-
                 $mediaFile = $media->make($file);
                 $fileId = $file->id;
                 $filePath = $mediaFile->url();
