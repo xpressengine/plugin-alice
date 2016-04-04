@@ -27,6 +27,7 @@
         "screenshots/sub.png",
         "screenshots/site.png"
       ],
+      "icon": "icon.png",
       "component": {
         "theme/alice@main": {
           "class": "Xpressengine\\Plugins\\Alice\\Theme\\Main",
