@@ -17,7 +17,7 @@ use App\Http\Controllers\Controller;
 use XePresenter;
 use XeTheme;
 use Xpressengine\Http\Request;
-use Xpressengine\Plugins\Alice\Plugin as Alice;
+use Xpressengine\Plugins\Alice\Alice;
 use Xpressengine\Storage\File;
 
 /**
@@ -29,7 +29,7 @@ use Xpressengine\Storage\File;
  */
 class ConfigController extends Controller
 {
-    protected $configId = 'theme/alice';
+    protected $configId = 'alice';
 
     public function edit(Request $request)
     {
