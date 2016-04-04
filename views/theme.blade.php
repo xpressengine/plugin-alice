@@ -1,4 +1,4 @@
-{{ XeFrontend::bodyClass(sprintf('body desktop %s %s %s %s',
+{{ XeFrontend::bodyClass(sprintf('desktop %s %s %s %s',
 $config->get('mainMenuTheme', ''),
 $config->get('mainMenuFixPosition', ''),
 $config->get('useColorSet', true) ? $config->get('colorSetValue', '') : '',

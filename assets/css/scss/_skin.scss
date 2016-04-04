@@ -48,8 +48,8 @@ header {
   .btn-toggle .icon-bar {
     background-color: #8D8D8D;
     display: block;
-    width: 26px;
-    height: 1px;
+    width: 20px;
+    height: 2px;
     border-radius: 1px;
     + .icon-bar {
       margin-top: 7px;
@@ -80,6 +80,10 @@ header {
     font-size: 22px;
     color: $brown-color;
     letter-spacing: 3px;
+
+    img{
+      max-height: 60px;
+    }
   }
   .btn_config {
     display: inline-block;
@@ -157,8 +161,7 @@ header {
         display: block;
         color: #000;
         text-decoration: none;
-        letter-spacing: 1px;
-        font-size: 12px;
+        font-size: 14px;
       }
       list-style: none;
     }
@@ -360,7 +363,7 @@ header nav .nav-list .sub-menu {
       display: inline-block;
       zoom: 1;
       *
-	display: inline;
+      display: inline;
       /*IE7 life-saver */
       height: 30px;
       margin: 5px 4px;
@@ -662,6 +665,10 @@ header nav .nav-list .sub-menu {
       }
       .link-brand {
         display: inline-block;
+
+        img{
+          max-height: 70px;
+        }
       }
     }
     .plugin-area {

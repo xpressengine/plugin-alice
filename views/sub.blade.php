@@ -1,5 +1,3 @@
-@inject('plugin', '\Xpressengine\Plugins\Alice\Plugin')
-
 @extends('alice::views.theme')
 
 @section('spot')
