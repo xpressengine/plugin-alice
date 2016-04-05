@@ -14,7 +14,7 @@
 namespace Xpressengine\Plugins\Alice\Theme;
 
 use Xpressengine\Menu\Models\MenuItem;
-use Xpressengine\Plugins\Alice\Plugin as Alice;
+use Xpressengine\Plugins\Alice\Alice;
 
 /**
  * @category    Alice
@@ -25,7 +25,7 @@ use Xpressengine\Plugins\Alice\Plugin as Alice;
  */
 class Sub extends Main
 {
-    
+
     /**
      * 테마를 출력한다.
      *
