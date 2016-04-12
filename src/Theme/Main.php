@@ -114,7 +114,7 @@ class Main extends AbstractTheme
 
         $menu = null;
         if ($menuId !== null) {
-            $menu = Menu::find($menuId);
+            $menu = Menu::with('items.basicImage', 'items.hoverImage', 'items.selectedImage')->find($menuId);
             // pre load
             app('xe.permission')->loadBranch($menuId);
         }
