@@ -14,8 +14,8 @@ $config->get('subMenuThemeAndTopBanner', '')
             <span class="icon-bar"></span>
         </button>
         <div class="brand-area">
-            @if ($config->get('logoType', 'image') == 'text')
-                <h1><a href="{{ url('/') }}" class="link-brand">{!! xe_trans($config->get('logoText', ''))!!}</a></h1>
+            @if ($config->get('logoType', 'text') == 'text')
+                <h1><a href="{{ url('/') }}" class="link-brand">{!! xe_trans($config->get('logoText', 'Alice'))!!}</a></h1>
             @elseif ($config->get('logoImagePath', '') != '')
                 <h1><a href="{{ url('/') }}" class="link-brand"><img src="{{$config->get('logoImagePath')}}" /></a></h1>
             @endif
@@ -42,6 +42,7 @@ $config->get('subMenuThemeAndTopBanner', '')
         <nav>
             <ul class="nav-list">
                 {{-- loop 1--}}
+                @if($mainMenu !== null)
                 @foreach($mainMenu->getTree()->getTreeNodes() as $menuItem)
                 @can('visible', [$menuItem, $mainMenu])
                 <li class="@if($menuItem->isSelected())on @endif @if($menuItem->hasChild()) sub-menu @endif">
@@ -75,6 +76,7 @@ $config->get('subMenuThemeAndTopBanner', '')
                 </li>
                 @endcan
                 @endforeach
+                @endif
             </ul>
         </nav>
     </div>
@@ -99,10 +101,11 @@ $config->get('subMenuThemeAndTopBanner', '')
                     @endif
                 </div>
                 <p class="footer-text">
-                    {!! xe_trans($config->get('footerContents')) !!}
+                    {!! xe_trans($config->get('footerContents', '')) !!}
                 </p>
             </div>
 
+            @if($subMenu !== null)
             @foreach($subMenu->getTree()->getTreeNodes() as $subItem)
                 @can('visible', [$subItem, $subMenu])
                 <div class="xe-col-sm-2">
@@ -117,6 +120,7 @@ $config->get('subMenuThemeAndTopBanner', '')
                 </div>
                 @endcan
             @endforeach
+            @endif
 
             <div class="xe-col-sm-2 xe-col-xs-offset-1">
                 <div class="link-area float-right">

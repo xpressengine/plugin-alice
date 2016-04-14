@@ -30,10 +30,10 @@
                                         <div class="list-group-item">
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="logoType" value="image" @if($config->get('logoType', 'image') == 'image') checked="checked" @endif >{{xe_trans('xe::image')}}
+                                                    <input type="radio" name="logoType" value="image" @if($config->get('logoType', 'text') == 'image') checked="checked" @endif >{{xe_trans('xe::image')}}
                                                 </label>
                                                 <label>
-                                                    <input type="radio" name="logoType" value="text" @if($config->get('logoType', 'image') == 'text') checked="checked" @endif>{{xe_trans('xe::text')}}
+                                                    <input type="radio" name="logoType" value="text" @if($config->get('logoType', 'text') == 'text') checked="checked" @endif>{{xe_trans('xe::text')}}
                                                 </label>
                                             </div>
                                         </div>

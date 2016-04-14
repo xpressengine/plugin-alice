@@ -1,7 +1,11 @@
 @extends('alice::views.theme')
 
 @section('spot')
-    <div class="sub-spot" style="background-image:url({{$config->get('subTopImagePath')}})">
+    <div class="sub-spot"
+        @if ($config->get('subTopImagePath', '') !== '')
+        style="background-image:url({{$config->get('subTopImagePath', '')}})"
+        @endif
+    >
         <div class="table-txt xe-container">
             <h2>{{ xe_trans($selectedMenu ? $selectedMenu->title : '') }}</h2>
         </div>
