@@ -95,9 +95,9 @@ $config->get('subMenuThemeAndTopBanner', '')
             <div class="xe-col-sm-3">
                 <div class="brand-area">
                     @if ($config->get('footerLogoType', 'image') == 'text')
-                        <h1><a href="{{ url('/') }}" class="link-brand">{!! xe_trans($config->get('footerLogoText', '')) !!}</a></h1>
+                        <a href="{{ url('/') }}" class="link-brand">{!! xe_trans($config->get('footerLogoText', '')) !!}</a>
                     @elseif ($config->get('footerLogoImagePath', '') != '')
-                        <h1><a href="{{ url('/') }}"><img src="{{$config->get('footerLogoImagePath')}}"/></a></h1>
+                        <a href="{{ url('/') }}"><img src="{{$config->get('footerLogoImagePath')}}"/></a>
                     @endif
                 </div>
                 <p class="footer-text">
