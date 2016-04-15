@@ -14,8 +14,8 @@ $config->get('subMenuThemeAndTopBanner', '')
             <span class="icon-bar"></span>
         </button>
         <div class="brand-area">
-            @if ($config->get('logoType', 'image') == 'text')
-                <h1><a href="{{ url('/') }}" class="link-brand">{!! xe_trans($config->get('logoText', ''))!!}</a></h1>
+            @if ($config->get('logoType', 'text') == 'text')
+                <h1><a href="{{ url('/') }}" class="link-brand">{!! xe_trans($config->get('logoText', 'Alice'))!!}</a></h1>
             @elseif ($config->get('logoImagePath', '') != '')
                 <h1><a href="{{ url('/') }}" class="link-brand"><img src="{{$config->get('logoImagePath')}}" /></a></h1>
             @endif
@@ -42,6 +42,7 @@ $config->get('subMenuThemeAndTopBanner', '')
         <nav>
             <ul class="nav-list">
                 {{-- loop 1--}}
+                @if($mainMenu !== null)
                 @foreach($mainMenu->getTree()->getTreeNodes() as $menuItem)
                     @can('visible', [$menuItem, $mainMenu])
 
@@ -53,39 +54,7 @@ $config->get('subMenuThemeAndTopBanner', '')
 
                     @endcan
                 @endforeach
-                {{--@foreach($mainMenu->getTree()->getTreeNodes() as $menuItem)--}}
-                {{--@can('visible', [$menuItem, $mainMenu])--}}
-                {{--<li class="@if($menuItem->isSelected())on @endif @if($menuItem->hasChild()) sub-menu @endif">--}}
-                    {{--@if($menuItem->hasChild() === false)--}}
-                        {{--<a href="{{ url($menuItem->url) }}"><span>{{ xe_trans($menuItem->title) }}</span></a>--}}
-                    {{--@else--}}
-                        {{--<a href="{{ url($menuItem->url) }}">{{ xe_trans($menuItem->title) }}<em class="ico-arrow"></em></a>--}}
-                        {{--<ul class="sub-menu-list">--}}
-                             {{--loop 2--}}
-                            {{--@foreach($menuItem->getChildren() as $menuItem2Depth)--}}
-                                {{--@can('visible', $menuItem2Depth)--}}
-                                {{--<li class="@if($menuItem2Depth->isSelected())on @endif @if($menuItem2Depth->hasChild()) sub-menu @endif">--}}
-                                    {{--@if($menuItem2Depth->hasChild() === false)--}}
-                                        {{--<a href="{{ url($menuItem2Depth->url) }}">{{ xe_trans($menuItem2Depth->title) }}</a>--}}
-                                    {{--@else--}}
-                                        {{--<a href="{{ url($menuItem2Depth->url) }}">{{ xe_trans($menuItem2Depth->title) }}<em class="ico-arrow"></em></a>--}}
-                                        {{--<ul class="sub-menu-list">--}}
-                                             {{--loop 3--}}
-                                            {{--@foreach($menuItem2Depth->getChildren() as $menuItem3Depth)--}}
-                                                {{--@can('visible', $menuItem3Depth)--}}
-                                                {{--<li class="@if($menuItem3Depth->isSelected())on @endif"><a href="{{ url($menuItem3Depth->url) }}">{{ xe_trans($menuItem3Depth->title) }}</a></li>--}}
-                                                {{--@endcan--}}
-                                            {{--@endforeach--}}
-                                        {{--</ul>--}}
-                                    {{--@endif--}}
-                                {{--</li>--}}
-                                {{--@endcan--}}
-                            {{--@endforeach--}}
-                        {{--</ul>--}}
-                    {{--@endif--}}
-                {{--</li>--}}
-                {{--@endcan--}}
-                {{--@endforeach--}}
+                @endif
             </ul>
         </nav>
     </div>
@@ -104,32 +73,25 @@ $config->get('subMenuThemeAndTopBanner', '')
             <div class="xe-col-sm-3">
                 <div class="brand-area">
                     @if ($config->get('footerLogoType', 'image') == 'text')
-                        <h1><a href="{{ url('/') }}" class="link-brand">{!! xe_trans($config->get('footerLogoText', '')) !!}</a></h1>
+                        <a href="{{ url('/') }}" class="link-brand">{!! xe_trans($config->get('footerLogoText', '')) !!}</a>
                     @elseif ($config->get('footerLogoImagePath', '') != '')
-                        <h1><a href="{{ url('/') }}"><img src="{{$config->get('footerLogoImagePath')}}"/></a></h1>
+                        <a href="{{ url('/') }}"><img src="{{$config->get('footerLogoImagePath')}}"/></a>
                     @endif
                 </div>
                 <p class="footer-text">
-                    {!! xe_trans($config->get('footerContents')) !!}
+                    {!! xe_trans($config->get('footerContents', '')) !!}
                 </p>
             </div>
 
+            @if($subMenu !== null)
             @foreach($subMenu->getTree()->getTreeNodes() as $subItem)
                 @can('visible', [$subItem, $subMenu])
 
                 @include('alice::views.menu.bottom.root', ['menuItem' => $subItem, 'menu' => $subMenu])
-                {{--<div class="xe-col-sm-2">--}}
-                    {{--<h3><a href="{{ url($subItem->url) }}">{{xe_trans($subItem->title)}}</a></h3>--}}
-                    {{--@if($subItem->hasChild() == true)--}}
-                        {{--<ul class="menu-list">--}}
-                            {{--@foreach($subItem->getChildren() as $subItem2Depth)--}}
-                                {{--<li @if($subItem2Depth->isSelected()) class="on" @endif><a href="{{url($subItem2Depth->url)}}">{{xe_trans($subItem2Depth->title)}}</a></li>--}}
-                            {{--@endforeach--}}
-                        {{--</ul>--}}
-                    {{--@endif--}}
-                {{--</div>--}}
+
                 @endcan
             @endforeach
+            @endif
 
             <div class="xe-col-sm-2 xe-col-xs-offset-1">
                 <div class="link-area float-right">

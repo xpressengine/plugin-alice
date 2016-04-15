@@ -47,7 +47,6 @@ class Main extends AbstractTheme
 
         // get configuration data of theme
         $config = $this->getConfig();
-
         // get menus
         $mainMenu = $this->getMenu($config, 'mainMenu');
         $subMenu = $this->getMenu($config, 'subMenu');
