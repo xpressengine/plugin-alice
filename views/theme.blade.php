@@ -44,37 +44,15 @@ $config->get('subMenuThemeAndTopBanner', '')
                 {{-- loop 1--}}
                 @if($mainMenu !== null)
                 @foreach($mainMenu->getTree()->getTreeNodes() as $menuItem)
-                @can('visible', [$menuItem, $mainMenu])
-                <li class="@if($menuItem->isSelected())on @endif @if($menuItem->hasChild()) sub-menu @endif">
+                    @can('visible', [$menuItem, $mainMenu])
+
                     @if($menuItem->hasChild() === false)
-                        <a href="{{ url($menuItem->url) }}"><span>{{ xe_trans($menuItem->title) }}</span></a>
+                        @include('alice::views.menu.top.leaf', ['menuItem' => $menuItem, 'menu' => $mainMenu])
                     @else
-                        <a href="{{ url($menuItem->url) }}">{{ xe_trans($menuItem->title) }}<em class="ico-arrow"></em></a>
-                        <ul class="sub-menu-list">
-                            {{-- loop 2--}}
-                            @foreach($menuItem->getChildren() as $menuItem2Depth)
-                                @can('visible', $menuItem2Depth)
-                                <li class="@if($menuItem2Depth->isSelected())on @endif @if($menuItem2Depth->hasChild()) sub-menu @endif">
-                                    @if($menuItem2Depth->hasChild() === false)
-                                        <a href="{{ url($menuItem2Depth->url) }}">{{ xe_trans($menuItem2Depth->title) }}</a>
-                                    @else
-                                        <a href="{{ url($menuItem2Depth->url) }}">{{ xe_trans($menuItem2Depth->title) }}<em class="ico-arrow"></em></a>
-                                        <ul class="sub-menu-list">
-                                            {{-- loop 3--}}
-                                            @foreach($menuItem2Depth->getChildren() as $menuItem3Depth)
-                                                @can('visible', $menuItem3Depth)
-                                                <li class="@if($menuItem3Depth->isSelected())on @endif"><a href="{{ url($menuItem3Depth->url) }}">{{ xe_trans($menuItem3Depth->title) }}</a></li>
-                                                @endcan
-                                            @endforeach
-                                        </ul>
-                                    @endif
-                                </li>
-                                @endcan
-                            @endforeach
-                        </ul>
+                        @include('alice::views.menu.top.common', ['menuItem' => $menuItem, 'menu' => $mainMenu])
                     @endif
-                </li>
-                @endcan
+
+                    @endcan
                 @endforeach
                 @endif
             </ul>
@@ -108,16 +86,18 @@ $config->get('subMenuThemeAndTopBanner', '')
             @if($subMenu !== null)
             @foreach($subMenu->getTree()->getTreeNodes() as $subItem)
                 @can('visible', [$subItem, $subMenu])
-                <div class="xe-col-sm-2">
-                    <h3><a href="{{ url($subItem->url) }}">{{xe_trans($subItem->title)}}</a></h3>
-                    @if($subItem->hasChild() == true)
-                        <ul class="menu-list">
-                            @foreach($subItem->getChildren() as $subItem2Depth)
-                                <li @if($subItem2Depth->isSelected()) class="on" @endif><a href="{{url($subItem2Depth->url)}}">{{xe_trans($subItem2Depth->title)}}</a></li>
-                            @endforeach
-                        </ul>
-                    @endif
-                </div>
+
+                @include('alice::views.menu.bottom.root', ['menuItem' => $subItem, 'menu' => $subMenu])
+                {{--<div class="xe-col-sm-2">--}}
+                    {{--<h3><a href="{{ url($subItem->url) }}">{{xe_trans($subItem->title)}}</a></h3>--}}
+                    {{--@if($subItem->hasChild() == true)--}}
+                        {{--<ul class="menu-list">--}}
+                            {{--@foreach($subItem->getChildren() as $subItem2Depth)--}}
+                                {{--<li @if($subItem2Depth->isSelected()) class="on" @endif><a href="{{url($subItem2Depth->url)}}">{{xe_trans($subItem2Depth->title)}}</a></li>--}}
+                            {{--@endforeach--}}
+                        {{--</ul>--}}
+                    {{--@endif--}}
+                {{--</div>--}}
                 @endcan
             @endforeach
             @endif
@@ -216,6 +196,15 @@ $config->get('subMenuThemeAndTopBanner', '')
             e.preventDefault();
             $(".plugin-area .toggle-menu").toggle()
         });
+
+
+        // image menu event
+        $('.__xe_menu_image').hover(function () {
+            $(this).data('basic', $(this).attr('src'));
+            $(this).attr('src', $(this).data('hover'));
+        }, function () {
+            $(this).attr('src', $(this).data('basic'));
+        }).parent().css('padding', '0px');
 
     });
 </script>
