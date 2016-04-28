@@ -88,16 +88,7 @@ $config->get('subMenuThemeAndTopBanner', '')
                 @can('visible', [$subItem, $subMenu])
 
                 @include('alice::views.menu.bottom.root', ['menuItem' => $subItem, 'menu' => $subMenu])
-                {{--<div class="xe-col-sm-2">--}}
-                    {{--<h3><a href="{{ url($subItem->url) }}">{{xe_trans($subItem->title)}}</a></h3>--}}
-                    {{--@if($subItem->hasChild() == true)--}}
-                        {{--<ul class="menu-list">--}}
-                            {{--@foreach($subItem->getChildren() as $subItem2Depth)--}}
-                                {{--<li @if($subItem2Depth->isSelected()) class="on" @endif><a href="{{url($subItem2Depth->url)}}">{{xe_trans($subItem2Depth->title)}}</a></li>--}}
-                            {{--@endforeach--}}
-                        {{--</ul>--}}
-                    {{--@endif--}}
-                {{--</div>--}}
+
                 @endcan
             @endforeach
             @endif
