@@ -126,7 +126,7 @@ class Main extends AbstractTheme
      *
      * @return array
      */
-    protected static function getConfig()
+    public static function getConfig()
     {
         return static::$handler->getThemeConfig(static::$configID);
     }
