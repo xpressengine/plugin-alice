@@ -29,17 +29,11 @@
       ],
       "icon": "icon.png",
       "component": {
-        "theme/alice@main": {
-          "class": "Xpressengine\\Plugins\\Alice\\Theme\\Main",
-          "name": "Alice (for main)",
-          "description": "The First Theme for XpressEngine3. use this to index page",
+        "theme/alice@alice": {
+          "class": "Xpressengine\\Plugins\\Alice\\Theme\\Alice",
+          "name": "Alice",
+          "description": "The First Theme for XpressEngine3",
           "screenshot": "/plugins/alice/screenshots/main.png"
-        },
-        "theme/alice@sub": {
-          "class": "Xpressengine\\Plugins\\Alice\\Theme\\Sub",
-          "name": "Alice (for sub)",
-          "description": "The First Theme for XpressEngine3. use this to sub page",
-          "screenshot": "/plugins/alice/screenshots/sub.png"
         }
       }
     }

@@ -1,5 +1,3 @@
-@extends('alice::views.theme')
-
 @section('spot')
     <div class="spot-area">
         <div id="owl-spot">
@@ -43,8 +41,6 @@
     </div>
 @endsection
 
-@section('theme_content')
 <div id="content" class="@if ($config->get('mainContentsAreaType', 'extend') == 'extend') xe-container-fluid @else xe-container @endif">
 {!! $content !!}
 </div>
-@endsection

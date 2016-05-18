@@ -69,26 +69,29 @@ $(document).ready(function(){
 
 		$submenu = $target.parent('.sub-menu');
 		if ($submenu.length !== 0) {
-			event.preventDefault();
 			var $ul = $($target).next('.sub-menu-list');
 
-			if ($ul.is(':visible')) {
-				// 하위 sub-menu 에 열려있는건 닫음
-				$ul.find('.sub-menu-list').slideUp('fast');
-				$ul.find('.sub-menu').removeClass('open');
+      if($ul.length != 0) {
+        event.preventDefault();
+        if ($ul.is(':visible')) {
+          // 하위 sub-menu 에 열려있는건 닫음
+          $ul.find('.sub-menu-list').slideUp('fast');
+          $ul.find('.sub-menu').removeClass('open');
 
-				$ul.slideUp('fast');
-				$submenu.removeClass('open');
+          $ul.slideUp('fast');
+          $submenu.removeClass('open');
+          return true;
+        }
+      }
 
-			} else {
-				var $parent =$submenu.parent();
-				// 동일 sub-menu 에 열려있는건 닫음
-				$parent.find('.sub-menu.open>.sub-menu-list').slideUp('fast');
-				$parent.find('.sub-menu.open').removeClass('open');
+      var $parent =$submenu.parent();
+      // 동일 sub-menu 에 열려있는건 닫음
+      $parent.find('.sub-menu.open>.sub-menu-list').slideUp('fast');
+      $parent.find('.sub-menu.open').removeClass('open');
 
-				$ul.slideDown('fast');
-				$submenu.addClass('open');
-			}
+      $ul.slideDown('fast');
+      $submenu.addClass('open');
+
 		} else {
 			$('.sub-menu').removeClass('open')
 			$('.sub-menu-list').slideUp('fast');

@@ -1,9 +1,24 @@
-{{ XeFrontend::bodyClass(sprintf('desktop %s %s %s %s',
-$config->get('mainMenuTheme', ''),
-$config->get('mainMenuFixPosition', ''),
-$config->get('useColorSet', true) ? $config->get('colorSetValue', '') : '',
-$config->get('subMenuThemeAndTopBanner', '')
-))}}
+{{-- stylesheet --}}
+{{ app('xe.frontend')->css([
+    $theme::asset('css/owl.carousel.css'),
+    $theme::asset('css/layout.css'),
+    'http://cdn.jsdelivr.net/xeicon/2.0.0/xeicon.min.css',
+])->load() }}
+
+{{-- script --}}
+{{ app('xe.frontend')->js([
+    $theme::asset('js/owl.carousel.min.js'),
+    $theme::asset('js/jquery.parallax-1.1.3.js'),
+    $theme::asset('js/layout.js'),
+])->load() }}
+
+{{-- body class --}}
+{{ app('xe.frontend')->bodyClass('desktop') }}
+{{ app('xe.frontend')->bodyClass($config->get('colorset', '')) }}
+{{ app('xe.frontend')->bodyClass($config->get('headerPosition', '')) }}
+{{ app('xe.frontend')->bodyClass($config->get('headerColorset', '')) }}
+{{ app('xe.frontend')->bodyClass($config->get('banner', 'no-spot')) }}
+{{ app('xe.frontend')->bodyClass($config->get('sidebar', '')) }}
 
 <header>
     <div class="xe-container">
@@ -14,11 +29,15 @@ $config->get('subMenuThemeAndTopBanner', '')
             <span class="icon-bar"></span>
         </button>
         <div class="brand-area">
-            @if ($config->get('logoType', 'text') == 'text')
-                <h1><a href="{{ url('/') }}" class="link-brand">{!! xe_trans($config->get('logoText', 'Alice'))!!}</a></h1>
-            @elseif ($config->get('logoImagePath', '') != '')
-                <h1><a href="{{ url('/') }}" class="link-brand"><img src="{{$config->get('logoImagePath')}}" /></a></h1>
-            @endif
+            <h1>
+                <a href="{{ url('/') }}" class="link-brand">
+                @if($config->get('logoImage.path'))
+                    <img src="{{ $config->get('logoImage.path') }}" alt="{{ $config->get('logoText', '') }}"/>
+                @else
+                    {!! $config->get('logoText', 'Alice') !!}
+                @endif
+                </a>
+            </h1>
         </div>
         <div class="plugin-area">
             <ul>
@@ -40,10 +59,12 @@ $config->get('subMenuThemeAndTopBanner', '')
             </ul>
         </div>
         <nav>
-            <ul class="nav-list">
-                {{-- loop 1--}}
-                @if($mainMenu !== null)
-                @foreach($mainMenu->getTree()->getTreeNodes() as $menuItem)
+            @include('_theme::gnb')
+
+            {{--<ul class="nav-list">
+                --}}{{-- loop 1--}}{{--
+
+                @foreach(menu($config->get('mainMenu')) as $menuItem)
                     @can('visible', [$menuItem, $mainMenu])
 
                     @if($menuItem->hasChild() === false)
@@ -54,8 +75,7 @@ $config->get('subMenuThemeAndTopBanner', '')
 
                     @endcan
                 @endforeach
-                @endif
-            </ul>
+            </ul>--}}
         </nav>
     </div>
 </header>
@@ -64,26 +84,27 @@ $config->get('subMenuThemeAndTopBanner', '')
 @show
 
 <!--[D] 컨텐츠 가운데 고정형 옵션 선택의 경우 클래스 .xe-container 로 교체  -->
-@section('theme_content')
-@show
+@include("_theme::".$config->get('layout', 'sub'))
 
 <div class="footer">
     <div class="xe-container">
         <div class="xe-row">
             <div class="xe-col-sm-3">
                 <div class="brand-area">
-                    @if ($config->get('footerLogoType', 'image') == 'text')
-                        <a href="{{ url('/') }}" class="link-brand">{!! xe_trans($config->get('footerLogoText', '')) !!}</a>
-                    @elseif ($config->get('footerLogoImagePath', '') != '')
-                        <a href="{{ url('/') }}"><img src="{{$config->get('footerLogoImagePath')}}"/></a>
-                    @endif
+                    <a href="{{ url('/') }}" class="link-brand">
+                        @if($config->get('footerLogoImage.path'))
+                            <img src="{{ $config->get('footerLogoImage.path') }}" alt="{{ $config->get('footerLogoText', '') }}"/>
+                        @else
+                            {!! $config->get('footerLogoText', 'Alice') !!}
+                        @endif
+                    </a>
                 </div>
                 <p class="footer-text">
                     {!! xe_trans($config->get('footerContents', '')) !!}
                 </p>
             </div>
 
-            @if($subMenu !== null)
+            {{--@if($subMenu !== null)
             @foreach($subMenu->getTree()->getTreeNodes() as $subItem)
                 @can('visible', [$subItem, $subMenu])
 
@@ -91,12 +112,12 @@ $config->get('subMenuThemeAndTopBanner', '')
 
                 @endcan
             @endforeach
-            @endif
+            @endif--}}
 
             <div class="xe-col-sm-2 xe-col-xs-offset-1">
                 <div class="link-area float-right">
-                    @foreach ($config->get('footerLink', []) as $footerLinkIndex => $footerLink)
-                        <a href="{{$footerLink}}"><i class="{{$config->get('footerLinkIcon')[$footerLinkIndex]}}"></i></a>
+                    @foreach ($config->get('footerLinkUrl') as $index => $url)
+                        <a href="{{$url}}"><i class="{{ $config->get("footerLinkIcon.$index") }}"></i></a>
                     @endforeach
                 </div>
             </div>
@@ -106,7 +127,7 @@ $config->get('subMenuThemeAndTopBanner', '')
         <div class="xe-container">
             <div class="xe-row">
                 <div class="xe-col-sm-6">
-                    <p>{{$config->get('copyRight', '')}}</p>
+                    <p>{{$config->get('copyright', '')}}</p>
                 </div>
                 <div class="xe-col-sm-6">
                     <p class="float-right">Made by <a href="http://xpressengine.io">XE</a></p>
@@ -115,6 +136,8 @@ $config->get('subMenuThemeAndTopBanner', '')
         </div>
     </div>
 </div>
+
+{{ app('xe.frontend')->html()->content("
 <script>
     jQuery(function($) {
         $('#owl-spot').owlCarousel({
@@ -183,11 +206,10 @@ $config->get('subMenuThemeAndTopBanner', '')
             });
         });
 
-        $(".auth-toggle").click(function(e) {
+        $('.auth-toggle').click(function(e) {
             e.preventDefault();
-            $(".plugin-area .toggle-menu").toggle()
+            $('.plugin-area .toggle-menu').toggle()
         });
-
 
         // image menu event
         $('.__xe_menu_image').hover(function () {
@@ -199,3 +221,4 @@ $config->get('subMenuThemeAndTopBanner', '')
 
     });
 </script>
+")->load() }}
