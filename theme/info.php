@@ -23,11 +23,6 @@ return [
                 'xe-container' => '고정'
             ]
         ],
-        'contentAreaWidth' => [
-            '_type' => 'text',
-            '_section' => '컬러셋 및 레이아웃 설정',
-            'label' => '컨텐츠 영역 가로 폭',
-        ],
         'layout' => [
             '_type' => 'select',
             '_section' => '컬러셋 및 레이아웃 설정',

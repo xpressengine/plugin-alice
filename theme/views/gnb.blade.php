@@ -1,5 +1,5 @@
 <ul class="nav-list">
-    @foreach(menu($config->get('mainMenu')) as $menu)
+    @foreach(menu_list($config->get('mainMenu')) as $menu)
 
     {{-- depth0--}}
     <li class="sub-menu @if($menu['selected']) on @endif ">

@@ -18,7 +18,7 @@
 {{ app('xe.frontend')->bodyClass($config->get('headerPosition', '')) }}
 {{ app('xe.frontend')->bodyClass($config->get('headerColorset', '')) }}
 {{ app('xe.frontend')->bodyClass($config->get('banner', 'no-spot')) }}
-{{ app('xe.frontend')->bodyClass($config->get('sidebar', '')) }}
+{{ app('xe.frontend')->bodyClass($config->get('sidebar', 'no-snb')) }}
 
 <header>
     <div class="xe-container">
@@ -59,7 +59,7 @@
             </ul>
         </div>
         <nav>
-            @include('_theme::gnb')
+            @include($theme::view('gnb'))
 
             {{--<ul class="nav-list">
                 --}}{{-- loop 1--}}{{--
@@ -84,7 +84,7 @@
 @show
 
 <!--[D] 컨텐츠 가운데 고정형 옵션 선택의 경우 클래스 .xe-container 로 교체  -->
-@include("_theme::".$config->get('layout', 'sub'))
+@include($theme::view($config->get('layout', 'main')))
 
 <div class="footer">
     <div class="xe-container">
@@ -116,9 +116,11 @@
 
             <div class="xe-col-sm-2 xe-col-xs-offset-1">
                 <div class="link-area float-right">
-                    @foreach ($config->get('footerLinkUrl') as $index => $url)
+                    @if($links = $config->get('footerLinkUrl'))
+                    @foreach ($links as $index => $url)
                         <a href="{{$url}}"><i class="{{ $config->get("footerLinkIcon.$index") }}"></i></a>
                     @endforeach
+                    @endif
                 </div>
             </div>
         </div>
