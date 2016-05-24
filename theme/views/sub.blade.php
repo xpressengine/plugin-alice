@@ -1,4 +1,5 @@
 @section('spot')
+    @parent
     <div class="sub-spot"
         @if ($config->get('subTopImagePath', '') !== '')
         style="background-image:url({{$config->get('subTopImagePath', '')}})"
