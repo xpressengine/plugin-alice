@@ -72,7 +72,7 @@
                 <div class="brand-area">
                     <a href="{{ url('/') }}" class="link-brand">
                         @if($config->get('footerLogoImage.path'))
-                            <img src="{{ $config->get('footerLogoImage.path') }}" alt="{{ $config->get('footerLogoText', '') }}"/>
+                            <img src="{{ $config->get('footerLogoImage.path') }}" alt="{{ $config->get('footerLogoText', 'Alice') }}"/>
                         @else
                             {!! $config->get('footerLogoText', 'Alice') !!}
                         @endif

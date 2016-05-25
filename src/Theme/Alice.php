@@ -13,7 +13,6 @@
  */
 namespace Xpressengine\Plugins\Alice\Theme;
 
-use Xpressengine\Plugins\Alice\Alice as plugin;
 use Xpressengine\Theme\GenericTheme;
 
 /**

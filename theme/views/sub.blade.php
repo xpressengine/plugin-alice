@@ -12,7 +12,7 @@
 @endsection
 
 <div id="sub-container" class="sub-container">
-    <div class="@if ($config->get('subContentsAreaType', 'extend') == 'extend') xe-container-fluid @else xe-container @endif">
+    <div class="@if ($config->get('subContentsAreaType') == 'extend') xe-container-fluid @else xe-container @endif">
         <!-- snb -->
         <div class="xe-col-sm-3 snb">
             @section('subLeft')
