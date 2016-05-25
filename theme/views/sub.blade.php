@@ -1,3 +1,7 @@
+{{-- body class --}}
+{{ app('xe.frontend')->bodyClass($config->get('banner', 'no-spot')) }}
+{{ app('xe.frontend')->bodyClass($config->get('sidebar', 'no-snb')) }}
+
 @section('spot')
     @parent
     <div class="sub-spot"

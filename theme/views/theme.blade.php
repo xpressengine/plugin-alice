@@ -19,8 +19,6 @@
 {{ app('xe.frontend')->bodyClass($config->get('colorset', '')) }}
 {{ app('xe.frontend')->bodyClass($config->get('headerPosition', '')) }}
 {{ app('xe.frontend')->bodyClass($config->get('headerColorset', '')) }}
-{{ app('xe.frontend')->bodyClass($config->get('banner', 'no-spot')) }}
-{{ app('xe.frontend')->bodyClass($config->get('sidebar', 'no-snb')) }}
 
 @section('theme_content')
     <!--[D] 컨텐츠 가운데 고정형 옵션 선택의 경우 클래스 .xe-container 로 교체  -->
