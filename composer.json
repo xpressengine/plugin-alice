@@ -8,14 +8,14 @@
     "alice",
     "material"
   ],
-  "license": "LGPL-2.0",
+  "license": "LGPL-2.1",
   "version": "1.0.0",
   "type": "xpressengine-plugin",
   "authors": [
     {
       "name": "xpressengine",
       "email": "developers@xpressengine.com",
-      "homepage": "http://www.xpressengine.com",
+      "homepage": "https://xpressengine.io",
       "role": "Developer"
     }
   ],
