@@ -71,12 +71,12 @@ return [
             'label' => '슬라이드1 이미지',
         ],
         'slide1Title' => [
-            '_type' => 'text',
+            '_type' => 'langTextarea',
             '_section' => '메인페이지 설정',
             'label' => '슬라이드1 제목',
         ],
         'slide1Subtitle' => [
-            '_type' => 'text',
+            '_type' => 'langTextarea',
             '_section' => '메인페이지 설정',
             'label' => '슬라이드1 내용',
         ],
@@ -86,12 +86,12 @@ return [
             'label' => '슬라이드2 이미지',
         ],
         'slide2Title' => [
-            '_type' => 'text',
+            '_type' => 'langTextarea',
             '_section' => '메인페이지 설정',
             'label' => '슬라이드2 제목',
         ],
         'slide2Subtitle' => [
-            '_type' => 'text',
+            '_type' => 'langTextarea',
             '_section' => '메인페이지 설정',
             'label' => '슬라이드2 내용',
         ],
@@ -101,19 +101,19 @@ return [
             'label' => '슬라이드3 이미지',
         ],
         'slide3Title' => [
-            '_type' => 'text',
+            '_type' => 'langTextarea',
             '_section' => '메인페이지 설정',
             'label' => '슬라이드3 제목',
         ],
         'slide3Subtitle' => [
-            '_type' => 'text',
+            '_type' => 'langTextarea',
             '_section' => '메인페이지 설정',
             'label' => '슬라이드3 내용',
         ],
 
         /* 헤더 설정 */
         'logoText' => [
-            '_type' => 'text',
+            '_type' => 'langText',
             '_section' => '헤더 설정',
             'label' => '로고 제목',
             'placeholder' => '상단에 표시될 로고 대체 텍스트를 입력하세요',
@@ -154,7 +154,7 @@ return [
 
         /* 푸터 설정 */
         'footerLogoText' => [
-            '_type' => 'text',
+            '_type' => 'langText',
             '_section' => '푸터 설정',
             'label' => '푸터 로고 제목',
             'placeholder' => '푸터에 표시될 로고 대체 텍스트를 입력하세요',
@@ -165,7 +165,7 @@ return [
             'label' => '푸터 로고 이미지',
         ],
         'footerContents' => [
-            '_type' => 'textarea',
+            '_type' => 'langTextarea',
             '_section' => '푸터 설정',
             'label' => '푸터 내용 입력',
             'placeholder' => '푸터에 별도로 표시하고 싶은 텍스트를 입력하세요',

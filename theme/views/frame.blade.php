@@ -10,9 +10,9 @@
             <h1>
                 <a href="{{ url('/') }}" class="link-brand">
                 @if($config->get('logoImage.path'))
-                    <img src="{{ $config->get('logoImage.path') }}" alt="{{ $config->get('logoText', '') }}"/>
+                    <img src="{{ $config->get('logoImage.path') }}" alt="{{ xe_trans($config->get('logoText', '')) }}"/>
                 @else
-                    {!! $config->get('logoText', 'Alice') !!}
+                    {!! xe_trans($config->get('logoText', 'Alice')) !!}
                 @endif
                 </a>
             </h1>
@@ -72,9 +72,9 @@
                 <div class="brand-area">
                     <a href="{{ url('/') }}" class="link-brand">
                         @if($config->get('footerLogoImage.path'))
-                            <img src="{{ $config->get('footerLogoImage.path') }}" alt="{{ $config->get('footerLogoText', 'Alice') }}"/>
+                            <img src="{{ $config->get('footerLogoImage.path') }}" alt="{{ xe_trans($config->get('footerLogoText', 'Alice')) }}"/>
                         @else
-                            {!! $config->get('footerLogoText', 'Alice') !!}
+                            {!! xe_trans($config->get('footerLogoText', 'Alice')) !!}
                         @endif
                     </a>
                 </div>
