@@ -5,8 +5,7 @@
     "xpressengine",
     "plugin",
     "theme",
-    "alice",
-    "material"
+    "alice"
   ],
   "license": "LGPL-2.1",
   "version": "0.9.0",
@@ -38,14 +37,7 @@
       }
     }
   },
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://packagist.xpressengine.io/"
-    }
-  ],
   "require": {
-
   },
   "autoload": {
     "psr-4": {
