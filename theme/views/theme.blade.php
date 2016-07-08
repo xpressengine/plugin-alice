@@ -9,7 +9,7 @@
 {{ app('xe.frontend')->css([
     $theme::asset('css/owl.carousel.css'),
     $theme::asset('css/layout.css'),
-    'http://cdn.jsdelivr.net/xeicon/2.0.0/xeicon.min.css',
+    '//cdn.jsdelivr.net/xeicon/2.0.0/xeicon.min.css',
 ])->load() }}
 
 {{-- script --}}
