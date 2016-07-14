@@ -228,7 +228,7 @@ return [
             'gnb.blade.php',
         ],
         'assets' => [
-            'style.css'
+            'css/layout.css'
         ]
     ]
 ];
