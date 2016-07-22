@@ -18,10 +18,9 @@
 }
 
 
-body, input, textarea, select, table, h1, h2, h3, h4, h5, h6 {
+body, input, textarea, select, table {
   font-family: "애플 SD 산돌고딕 Neo","Apple SD Gothic Neo",AppleGothic,Helvetica,sans-serif;
-  font-size: 13px;
-  color: #000;
+  font-size: 13px;  
 }
 
 header {
@@ -531,7 +530,7 @@ header nav .nav-list .sub-menu {
   }
   .snb {
     h3 {
-      margin-bottom: 40px;
+      margin: 0 0 40px;
       font-size: 15px;
       letter-spacing: 3px;
     }
@@ -596,11 +595,14 @@ header nav .nav-list .sub-menu {
   &:after {
     background-color: transparent;
   }
-  .snb {
-    display: none;
-  }
-  .sub-content {
-    width: 100%;
+  >.xe-container{
+    .snb {
+      display: none;
+    }
+    .sub-content {
+      position: static;
+      width: 100%;
+    }
   }
 }
 
@@ -630,7 +632,7 @@ header nav .nav-list .sub-menu {
   }
 }
 
-@media (max-width: 1067px) {
+@media (max-width: 1199px) {
   .sub-container {
     &:after {
       background-color: transparent;
@@ -644,10 +646,7 @@ header nav .nav-list .sub-menu {
   }
 }
 
-@media (min-width: 1068px) {
-  .xe-container {
-    max-width: 1200px;
-  }
+@media (min-width: 1200px) {  
   header {
     .xe-container {
       position: relative;
@@ -802,9 +801,20 @@ header nav .nav-list .sub-menu {
   .spot-area .owl-controls .owl-nav {
     display: block;
   }
-  .sub-container .sub-content {
-    padding-left: 45px;
-  }
+  .sub-container{
+    >.xe-container,
+    >.xe-container-fluid{
+      position: relative;
+      .sub-content {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        height: 100%;
+        padding-left: 45px;
+      }    
+    }
+  } 
   .no-snb .sub-container .sub-content {
     padding-left: 15px;
   }
@@ -814,11 +824,9 @@ header nav .nav-list .sub-menu {
 
 body.desktop {
   font-family: 'Montserrat','나눔바른고딕',NanumBarunGothic,ng,'맑은 고딕','Malgun Gothic','돋움',Dotum,'애플 SD 산돌고딕 Neo','Apple SD Gothic Neo',AppleGothic,Helvetica,sans-serif;
-  font-size: 13px;
-  color: #000;
-  input, textarea, select, table, h1, h2, h3, h4, h5, h6 {
+  font-size: 13px;  
+  input, textarea, select, table {
     font-family: 'Montserrat','나눔바른고딕',NanumBarunGothic,ng,'맑은 고딕','Malgun Gothic','돋움',Dotum,'애플 SD 산돌고딕 Neo','Apple SD Gothic Neo',AppleGothic,Helvetica,sans-serif;
-    font-size: 13px;
-    color: #000;
+    font-size: 13px;    
   }
 }
