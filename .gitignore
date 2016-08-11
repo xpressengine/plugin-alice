@@ -1,3 +1,6 @@
+.*
+!.gitignore
+*.map
+node_modules
 composer.lock
 /vendor
-*.map
