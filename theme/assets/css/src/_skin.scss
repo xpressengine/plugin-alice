@@ -20,7 +20,7 @@
 
 body, input, textarea, select, table {
   font-family: "애플 SD 산돌고딕 Neo","Apple SD Gothic Neo",AppleGothic,Helvetica,sans-serif;
-  font-size: 13px;  
+  font-size: 13px;
 }
 
 header {
@@ -361,8 +361,7 @@ header nav .nav-list .sub-menu {
     .owl-dot {
       display: inline-block;
       zoom: 1;
-      *
-	display: inline;
+      *display: inline;
       /*IE7 life-saver */
       height: 30px;
       margin: 5px 4px;
@@ -646,7 +645,7 @@ header nav .nav-list .sub-menu {
   }
 }
 
-@media (min-width: 1200px) {  
+@media (min-width: 1200px) {
   header {
     .xe-container {
       position: relative;
@@ -812,9 +811,9 @@ header nav .nav-list .sub-menu {
         bottom: 0;
         height: 100%;
         padding-left: 45px;
-      }    
+      }
     }
-  } 
+  }
   .no-snb .sub-container .sub-content {
     padding-left: 15px;
   }
@@ -824,9 +823,9 @@ header nav .nav-list .sub-menu {
 
 body.desktop {
   font-family: 'Montserrat','나눔바른고딕',NanumBarunGothic,ng,'맑은 고딕','Malgun Gothic','돋움',Dotum,'애플 SD 산돌고딕 Neo','Apple SD Gothic Neo',AppleGothic,Helvetica,sans-serif;
-  font-size: 13px;  
+  font-size: 13px;
   input, textarea, select, table {
     font-family: 'Montserrat','나눔바른고딕',NanumBarunGothic,ng,'맑은 고딕','Malgun Gothic','돋움',Dotum,'애플 SD 산돌고딕 Neo','Apple SD Gothic Neo',AppleGothic,Helvetica,sans-serif;
-    font-size: 13px;    
+    font-size: 13px;
   }
 }
