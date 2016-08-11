@@ -21,3 +21,7 @@ gulp.task('sass', function() {
     .pipe($.if(config.useSourceMaps, $.sourcemaps.write(".")))
     .pipe(gulp.dest('./theme/assets/css'));
 });
+
+gulp.task('watch',function() {
+    gulp.watch('**/*.scss', ['sass']);
+});
