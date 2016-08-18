@@ -35,10 +35,7 @@
           "screenshot": "/plugins/alice/screenshots/main.png"
         }
       }
-    },
-    "branch-alias": {
-		"dev-develop": "0.9.3-dev"
-	}
+    }
   },
   "require": {
   },
