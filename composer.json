@@ -37,7 +37,7 @@
       }
     },
     "branch-alias": {
-		"dev-develop": "0.9.3"
+		"dev-develop": "0.9.3-dev"
 	}
   },
   "require": {
