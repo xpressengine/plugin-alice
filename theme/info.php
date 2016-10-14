@@ -170,6 +170,20 @@ return [
             'label' => '푸터 내용 입력',
             'placeholder' => '푸터에 별도로 표시하고 싶은 텍스트를 입력하세요',
         ],
+        'useFooterMenu' => [
+            '_type' => 'select',
+            '_section' => '푸터 설정',
+            'label' => '푸터 메뉴 사용 여부',
+            'options' => [
+                'Y' => '사용',
+                'N' => '사용 안 함'
+            ]
+        ],
+        'footerMenu' => [
+            '_type' => 'menu',
+            '_section' => '푸터 설정',
+            'label' => '푸터 메뉴 선택',
+        ],
         'copyright' => [
             '_type' => 'textarea',
             '_section' => '푸터 설정',
@@ -226,6 +240,7 @@ return [
             'main.blade.php',
             'sub.blade.php',
             'gnb.blade.php',
+            'fnb.blade.php',
         ],
         'assets' => [
             'css/layout.css'

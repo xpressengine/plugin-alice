@@ -38,22 +38,6 @@
         </div>
         <nav>
             @include($theme::view('gnb'))
-
-            {{--<ul class="nav-list">
-                --}}{{-- loop 1--}}{{--
-
-                @foreach(menu($config->get('mainMenu')) as $menuItem)
-                    @can('visible', [$menuItem, $mainMenu])
-
-                    @if($menuItem->hasChild() === false)
-                        @include('alice::views.menu.top.leaf', ['menuItem' => $menuItem, 'menu' => $mainMenu])
-                    @else
-                        @include('alice::views.menu.top.common', ['menuItem' => $menuItem, 'menu' => $mainMenu])
-                    @endif
-
-                    @endcan
-                @endforeach
-            </ul>--}}
         </nav>
     </div>
 </header>
@@ -83,15 +67,9 @@
                 </p>
             </div>
 
-            {{--@if($subMenu !== null)
-            @foreach($subMenu->getTree()->getTreeNodes() as $subItem)
-                @can('visible', [$subItem, $subMenu])
-
-                @include('alice::views.menu.bottom.root', ['menuItem' => $subItem, 'menu' => $subMenu])
-
-                @endcan
-            @endforeach
-            @endif--}}
+            @if($config->get('useFooterMenu', 'N') === 'Y')
+            @include($theme::view('fnb'))
+            @endif
 
             <div class="xe-col-sm-2 xe-col-xs-offset-1">
                 <div class="link-area float-right">
