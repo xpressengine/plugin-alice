@@ -26,7 +26,7 @@
                     <a href="#" class="plugin auth-toggle"><i class="xi-user"></i></a>
                     <ul class="toggle-menu">
                         @if(Auth::check())
-                            <li><a href="{{ route('user.profile', ['member' => auth()->id()]) }}">{{ xe_trans('xe::myProfile') }}</a></li>
+                            <li><a href="{{ route('user.profile', ['user' => auth()->id()]) }}">{{ xe_trans('xe::myProfile') }}</a></li>
                             <li><a href="{{ route('user.settings') }}">{{ xe_trans('xe::mySettings') }}</a></li>
                             <li><a href="{{ route('logout') }}">{{ xe_trans('xe::logout') }}</a></li>
                         @else
