@@ -151,7 +151,6 @@ return [
             /* for body class*/
         ],
 
-
         /* 푸터 설정 */
         'footerLogoText' => [
             '_type' => 'langText',
@@ -235,15 +234,10 @@ return [
         'desktop' => true
     ],
     'editable' => [
-        'views' => [
-            'theme.blade.php',
-            'main.blade.php',
-            'sub.blade.php',
-            'gnb.blade.php',
-            'fnb.blade.php',
-        ],
-        'assets' => [
-            'css/layout.css'
-        ]
+        'theme.blade.php',
+        'main.blade.php',
+        'sub.blade.php',
+        'gnb.blade.php',
+        'fnb.blade.php'
     ]
 ];
