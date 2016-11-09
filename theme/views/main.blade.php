@@ -113,20 +113,6 @@
                 $(this).addClass('on');
             });
         });
-
-        $('.auth-toggle').click(function(e) {
-            e.preventDefault();
-            $('.plugin-area .toggle-menu').toggle()
-        });
-
-        // image menu event
-        $('.__xe_menu_image').hover(function () {
-            $(this).data('basic', $(this).attr('src'));
-            $(this).attr('src', $(this).data('hover'));
-        }, function () {
-            $(this).attr('src', $(this).data('basic'));
-        }).parent().css('padding', '0px');
-
     });
 </script>
 ")->load() }}
