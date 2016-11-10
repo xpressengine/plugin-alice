@@ -26,8 +26,8 @@
                     <a href="#" class="plugin auth-toggle"><i class="xi-user"></i></a>
                     <ul class="toggle-menu">
                         @if(Auth::check())
-                            <li><a href="{{ route('member.profile', ['member' => auth()->id()]) }}">{{ xe_trans('xe::myProfile') }}</a></li>
-                            <li><a href="{{ route('member.settings') }}">{{ xe_trans('xe::mySettings') }}</a></li>
+                            <li><a href="{{ route('user.profile', ['user' => auth()->id()]) }}">{{ xe_trans('xe::myProfile') }}</a></li>
+                            <li><a href="{{ route('user.settings') }}">{{ xe_trans('xe::mySettings') }}</a></li>
                             <li><a href="{{ route('logout') }}">{{ xe_trans('xe::logout') }}</a></li>
                         @else
                             <li><a href="{{ route('login') }}">{{ xe_trans('xe::login') }}</a></li>
@@ -95,89 +95,3 @@
         </div>
     </div>
 </div>
-
-{{ app('xe.frontend')->html()->content("
-<script>
-    jQuery(function($) {
-        $('#owl-spot').owlCarousel({
-            nav:true,
-            loop:true,
-            items:1,
-            responsive : {
-                0 : {
-                    nav: false,
-                },
-                768 : {
-                }
-            }
-        })
-
-        $('#owl-color').owlCarousel({
-            loop:true,
-            items:1,
-            animateOut:'fadeOut',
-            animateIn: 'fadeIn',
-            mouseDrag:false,
-            touchDrag:false
-        })
-
-        $('#owl-mobile').owlCarousel({
-            items:1,
-            touchDrag:false,
-            mouseDrag:false,
-            touchDrag:false,
-            loop:true,
-            responsive : {
-                0 : {
-                    mouseDrag:true,
-                    touchDrag:true,
-                },
-                768 : {
-                }
-            }
-        })
-
-        $('#owl-tablet').owlCarousel({
-            items:1,
-            touchDrag:false,
-            mouseDrag:false,
-            touchDrag:false,
-            loop:true
-        })
-
-        $('#owl-pc').owlCarousel({
-            items:1,
-            touchDrag:false,
-            mouseDrag:false,
-            touchDrag:false,
-            loop:true
-        })
-
-        $('.num span').click(function(){
-            $('#owl-color,#owl-mobile,#owl-tablet,#owl-pc').trigger('to.owl.carousel', $(this).index())
-        });
-
-        $(function(){
-            $('.num span').click(function(){
-                $('.num span').removeClass('on');
-                var index = $(this).index();
-                $(this).addClass('on');
-            });
-        });
-
-        $('.auth-toggle').click(function(e) {
-            e.preventDefault();
-            $('.plugin-area .toggle-menu').toggle()
-        });
-
-        // image menu event
-        $('.__xe_menu_image').hover(function () {
-            $(this).data('basic', $(this).attr('src'));
-            $(this).attr('src', $(this).data('hover'));
-        }, function () {
-            $(this).attr('src', $(this).data('basic'));
-        }).parent().css('padding', '0px');
-
-    });
-</script>
-")->load() }}
