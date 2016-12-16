@@ -393,6 +393,16 @@
 						<p>Copyright © NAVER Corp. Supported by D2 Program.</p>
 					</div>
 					<div class="xe-col-sm-6">
+						<div class="xe-form-group">
+							<div class="xe-dropdown ">
+								<button class="xe-btn" type="button" data-toggle="xe-dropdown"><i class="south korea xe-flag"></i> South Korea</button>
+								<ul class="xe-dropdown-menu">
+									<li><a href="#"><i class="south korea xe-flag"></i> South Korea</a></li>
+									<li><a href="#"><i class="united states xe-flag"></i> United States</a></li>
+									<li><a href="#"><i class="united kingdom xe-flag"></i> United Kingdom</a></li>
+								</ul>
+							</div>
+						</div>
 						<p class="float-right">Made by <a href="#">XE</a></p>
 					</div>
 				</div>
@@ -472,6 +482,15 @@
 		$(".auth-toggle").click(function(e) {
 			e.preventDefault();
 			$(".plugin-area .toggle-menu").toggle()
+		});
+		
+		$('.xe-dropdown button').on('click', function (){
+			$(this).parent().toggleClass('open');
+		});
+		$('.xe-dropdown-menu a').on('click', function (){
+			var target = $(this).parents('.xe-dropdown').children('button');
+			target.html($(this).html());
+			target.parent().toggleClass('open');
 		});
 
 	});
