@@ -646,12 +646,11 @@ header nav .nav-list .sub-menu {
 .footer .xe-form-group .xe-btn {
   border: 1px solid #333;
   background-color: #1b1c1f;
-  color: #fff;
+  color: #b8a18d;
   font-size: 13px;
 }
 
 .footer .xe-form-group .xe-btn:focus, .footer .xe-form-group .xe-btn.focus {
-  color: #fff;
   background-color: #1b1c1f;
   border: 1px solid #333;
 }
@@ -663,8 +662,15 @@ header nav .nav-list .sub-menu {
 }
 
 .footer .xe-form-group li a {
-  color: #fff;
   font-size: 13px;
+}
+
+.blue-theme .xe-form-group .xe-btn {
+  color: #8ba9ec;
+}
+
+.red-theme .xe-form-group .xe-btn {
+  color: #af3333;
 }
 
 .sub-container {
