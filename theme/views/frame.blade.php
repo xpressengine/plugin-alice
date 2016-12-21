@@ -89,6 +89,20 @@
                     <p>{{$config->get('copyright', '')}}</p>
                 </div>
                 <div class="xe-col-sm-6">
+
+                    @if($config->get('useMultiLang', 'Y') === 'Y')
+                    <div class="xe-form-group">
+                        <div class="xe-dropdown ">
+                            <button class="xe-btn" type="button" data-toggle="xe-dropdown"><i class="{{XeLang::getLocale()}} xe-flag"></i> {{ XeLang::getLocaleText(XeLang::getLocale()) }}</button>
+                            <ul class="xe-dropdown-menu">
+                                @foreach ( XeLang::getLocales() as $locale )
+                                <li><a href="{{ locale_url($locale) }}"><i class="{{ $locale }} xe-flag" data-locale="{{ $locale }}"></i> {{ XeLang::getLocaleText($locale) }}</a></li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                    @endif
+
                     <p class="float-right">Made by <a href="http://xpressengine.io">XE</a></p>
                 </div>
             </div>
