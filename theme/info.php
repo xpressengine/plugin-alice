@@ -244,6 +244,7 @@ return [
     ],
     'editable' => [
         'theme.blade.php',
+        'frame.blade.php',
         'main.blade.php',
         'sub.blade.php',
         'gnb.blade.php',
