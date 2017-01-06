@@ -446,7 +446,8 @@ header nav .nav-list .sub-menu {
     }
   }
   .footer-copy {
-    padding: 20px 0;
+    position: relative;
+    padding: 20px 0 60px;
     border-top: 1px solid #333;
   }
   color: #fff;
@@ -497,8 +498,48 @@ header nav .nav-list .sub-menu {
     margin-left: 16px;
     font-size: 23px;
   }
+  .xe-form-group {
+    position: absolute;
+    top: 25px;
+    right: 10px;
+    display: block;
+    height: 30px;
+    margin-bottom: 0;
+    .xe-btn {
+      border: 1px solid #333;
+      background-color: #1b1c1f;
+      color: #b8a18d;
+      font-size: 13px;
+    }
+    .xe-btn:focus, .xe-btn.focus {
+      // color: #fff;
+      background-color: #1b1c1f;
+      border: 1px solid #333;
+    }
+    .xe-dropdown-menu {
+      top: auto;
+      bottom: 31px;
+      background-color: #1b1c1f;
+    }
+    li a {
+      font-size: 13px;
+    }
+  }
 }
-
+.blue-theme {
+  .xe-form-group {
+    .xe-btn {
+      color: #8ba9ec;
+    }
+  }
+}
+.red-theme {
+  .xe-form-group {
+    .xe-btn {
+      color: #af3333;
+    }
+  }
+}
 .sub-container {
   position: relative;
   &:after {
@@ -622,11 +663,19 @@ header nav .nav-list .sub-menu {
     }
   }
   .footer {
+    .footer-copy {
+      padding: 20px 0;
+    }
     h3 {
       margin: 0 0 30px;
     }
     .link-area {
       margin-top: 0;
+    }
+    .xe-form-group {
+      position: absolute;
+      top: -8px;
+      right: 112px;
     }
   }
 }

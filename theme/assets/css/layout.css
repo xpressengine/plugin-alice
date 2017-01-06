@@ -570,7 +570,8 @@ header nav .nav-list .sub-menu {
 }
 
 .footer .footer-copy {
-  padding: 20px 0;
+  position: relative;
+  padding: 20px 0 60px;
   border-top: 1px solid #333;
 }
 
@@ -631,6 +632,45 @@ header nav .nav-list .sub-menu {
 .footer .link-area a {
   margin-left: 16px;
   font-size: 23px;
+}
+
+.footer .xe-form-group {
+  position: absolute;
+  top: 25px;
+  right: 10px;
+  display: block;
+  height: 30px;
+  margin-bottom: 0;
+}
+
+.footer .xe-form-group .xe-btn {
+  border: 1px solid #333;
+  background-color: #1b1c1f;
+  color: #b8a18d;
+  font-size: 13px;
+}
+
+.footer .xe-form-group .xe-btn:focus, .footer .xe-form-group .xe-btn.focus {
+  background-color: #1b1c1f;
+  border: 1px solid #333;
+}
+
+.footer .xe-form-group .xe-dropdown-menu {
+  top: auto;
+  bottom: 31px;
+  background-color: #1b1c1f;
+}
+
+.footer .xe-form-group li a {
+  font-size: 13px;
+}
+
+.blue-theme .xe-form-group .xe-btn {
+  color: #8ba9ec;
+}
+
+.red-theme .xe-form-group .xe-btn {
+  color: #af3333;
 }
 
 .sub-container {
@@ -762,11 +802,19 @@ header nav .nav-list .sub-menu {
     line-height: 36px;
     font-size: 27px;
   }
+  .footer .footer-copy {
+    padding: 20px 0;
+  }
   .footer h3 {
     margin: 0 0 30px;
   }
   .footer .link-area {
     margin-top: 0;
+  }
+  .footer .xe-form-group {
+    position: absolute;
+    top: -8px;
+    right: 112px;
   }
 }
 

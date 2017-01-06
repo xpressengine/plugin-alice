@@ -228,6 +228,15 @@ return [
             '_section' => '푸터 설정',
             'label' => '푸터 링크3 주소',
         ],
+        'useMultiLang' => [
+            '_type' => 'select',
+            '_section' => '푸터 설정',
+            'label' => '다국어 선택기',
+            'options' => [
+                'Y' => '사용',
+                'N' => '사용 안 함'
+            ]
+        ]
     ],
     'support' => [
         'mobile' => true,
@@ -235,6 +244,7 @@ return [
     ],
     'editable' => [
         'theme.blade.php',
+        'frame.blade.php',
         'main.blade.php',
         'sub.blade.php',
         'gnb.blade.php',
