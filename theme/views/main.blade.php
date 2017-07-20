@@ -3,7 +3,7 @@
         <div id="owl-spot">
             @if ($config->get('slide1Image.path'))
                 <div class="item">
-                    <div class="item-slide" style="background-image:url({{$config->get('slide1Image.path')}})">
+                    <div class="item-slide" style="background-image:url({{asset($config->get('slide1Image.path'))}})">
                         <div class="slide-text">
                             <div class="xe-container">
                                 @if ($config->get('slide1Title'))<strong>{!! nl2br(xe_trans($config->get('slide1Title', ''))) !!}</strong>@endif
@@ -15,7 +15,7 @@
             @endif
             @if ($config->get('slide2Image.path'))
                 <div class="item">
-                    <div class="item-slide" style="background-image:url({{$config->get('slide2Image.path')}})">
+                    <div class="item-slide" style="background-image:url({{asset($config->get('slide2Image.path'))}})">
                         <div class="slide-text">
                             <div class="xe-container">
                                 @if ($config->get('slide2Title') != '')<strong>{!! nl2br(xe_trans($config->get('slide2Title', ''))) !!}</strong>@endif
@@ -27,7 +27,7 @@
             @endif
             @if ($config->get('slide3Image.path'))
                 <div class="item">
-                    <div class="item-slide" style="background-image:url({{$config->get('slide3Image.path')}})">
+                    <div class="item-slide" style="background-image:url({{asset($config->get('slide3Image.path'))}})">
                         <div class="slide-text">
                             <div class="xe-container">
                                 @if ($config->get('slide3Title') != '')<strong>{!! nl2br(xe_trans($config->get('slide3Title', ''))) !!}</strong>@endif
