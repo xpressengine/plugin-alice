@@ -63,38 +63,41 @@ $(document).ready(function () {
     });
   });
 
+  $(document).on('mouseover', 'li.sub-menu', function (e) {
+    var $li = $(this);
+    var $ul = $li.find('> .sub-menu-list');
 
-  $(document).on('click', function (event) {
-    var $target = $(event.target);
-
-    $submenu = $target.parent('.sub-menu');
-    if ($submenu.length !== 0) {
-      var $ul = $($target).next('.sub-menu-list');
-
-      if ($ul.length != 0) {
-        event.preventDefault();
-        if ($ul.is(':visible')) {
-          // 하위 sub-menu 에 열려있는건 닫음
-          $ul.find('.sub-menu-list').slideUp('fast');
-          $ul.find('.sub-menu').removeClass('open');
-
-          $ul.slideUp('fast');
-          $submenu.removeClass('open');
-          return true;
-        }
-      }
-
-      var $parent = $submenu.parent();
-      // 동일 sub-menu 에 열려있는건 닫음
-      $parent.find('.sub-menu.open>.sub-menu-list').slideUp('fast');
-      $parent.find('.sub-menu.open').removeClass('open');
+    if($ul.length !== 0 && e.target.nodeName === 'A') {
+      e.preventDefault();
 
       $ul.slideDown('fast');
-      $submenu.addClass('open');
+      $li.addClass('open');
+    }
+  });
+
+  $(document).on('mouseleave', 'li.sub-menu', function () {
+    var $li = $(this);
+    var $ul = $li.find('> .sub-menu-list');
+
+    if($li.hasClass('open')) {
+      $ul.slideUp('fast');
+      $li.removeClass('open');
+    }
+  });
+
+  $(document).on('click', '.nav-list-button', function () {
+    var $this = $(this);
+    var $li = $this.parent();
+
+    if($li.hasClass('open')) {
+      $this.next().slideUp('fast');
+      $li.removeClass('open');
 
     } else {
-      $('.sub-menu').removeClass('open')
-      $('.sub-menu-list').slideUp('fast');
+      $li.siblings().removeClass('open').find('> .sub-menu-list').slideUp('fast');
+      $this.next().slideDown('fast');
+      $li.addClass('open');
+
     }
   });
 
@@ -102,6 +105,11 @@ $(document).ready(function () {
 
     var windowWidth = $(window).width();
     var $this = $(this).next("ul");
+
+    if(!$this.length) {
+      return;
+    }
+
     var $parent = $this.parent(); //li
     var $parentContainer = $parent.closest("ul");
     var initialOffset = $parentContainer.offset().left + $parentContainer.outerWidth(); // 부모의 left 위치 + 부모 width
@@ -118,4 +126,4 @@ $(document).ready(function () {
     }
   });
 
-})
+});
