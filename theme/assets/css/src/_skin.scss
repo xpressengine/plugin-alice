@@ -168,6 +168,15 @@ header {
       position: relative;
       padding: 15px 20px;
     }
+    &-button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 15px 20px;
+      border: 0;
+      background-color: transparent;
+      color: #000;
+    }
   }
 }
 
@@ -779,7 +788,7 @@ header nav .nav-list .sub-menu {
         float: left;
         position: relative;
         z-index: 10;
-        padding: 0 32px 0 0;
+        padding: 0 48px 0 0;
         background-color: transparent;
         > a {
           position: relative;
@@ -793,6 +802,7 @@ header nav .nav-list .sub-menu {
         &.on {
           background-color: transparent;
         }
+        
       }
       .sub-menu-list {
         position: absolute;
@@ -802,6 +812,11 @@ header nav .nav-list .sub-menu {
           padding: 0 20px;
           color: #000;
           line-height: 40px;
+        }
+        .nav-list-button {
+          height: 40px;
+          line-height: 40px;
+          color: #000;
         }
       }
       .sub-menu {
@@ -823,6 +838,11 @@ header nav .nav-list .sub-menu {
           background-color: #fff;
         }
       }
+      &-button {
+        right: 17px;
+        padding: 0 5px;
+        color: #fff;
+      } //nav-list-button
     }
     &.fixed-header nav .nav-list li a {
       color: #000;

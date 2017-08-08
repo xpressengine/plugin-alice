@@ -27,72 +27,77 @@
 <!--header 색상 옵션  클래스 body.black-header, body.white-header 상단고정해제 클래스 none-fixed-header -->
 <!--sub-spot영역 기본은 투명헤더+이미지베너 옵션 흰색/검정헤더에 텍스트베너 body.txt-banner -->
 <body class="body main-skin desktop">
-    <header>
-        <div class="xe-container">
-            <button class="btn-toggle" type="button">
-                <span class="blind">Toggle nav-listigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar v2"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <div class="brand-area">
-                <h1><a href="00_index.html" class="link-brand">Alice</a></h1>
-            </div>
-            <div class="plugin-area">
-                <ul>
-                    <li><a href="#" class="plugin"><i class="xi-cog"></i></a></li>
-                    <li>
-                        <a href="#" class="plugin auth-toggle"><i class="xi-user"></i></a>
-                        <ul class="toggle-menu">
-                            <li><a href="#">내프로필</a></li>
-                        </ul>
-                    </li>
+  <header>
+    <div class="xe-container">
+      <button class="btn-toggle" type="button">
+        <span class="blind">Toggle nav-listigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar v2"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="brand-area">
+        <h1><a href="00_index.html" class="link-brand">Alice</a></h1>
+      </div>
+      <div class="plugin-area">
+        <!--[D] nav 메뉴와 동일하게 slideup/down 처리 및 기존에 열려 있는 레이어 닫기-->
+        <ul>
+          <li><a href="#" class="plugin"><i class="xi-cog"></i></a></li>
+          <li>
+            <a href="#" class="plugin auth-toggle"><i class="xi-user"></i></a>
+            <ul class="toggle-menu">
+              <li><a href="#">내프로필</a></li>
+              <li><a href="#">로그인</a></li>
+              <!-- <li><a href="#">로그아웃</a></li> -->
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <nav>
+        <ul class="nav-list">
+          <li class="sub-menu">
+            <a href="#">WELCOME</a>
+            <button type="button" class="nav-list-button"><i class="xi-caret-down-min"></i></button>
+            <ul class="sub-menu-list">
+              <li class="on"><a href="#">document</a></li>
+              <li class="sub-menu">
+                <a href="#">tutorial</a>
+                <button type="button" class="nav-list-button"><i class="xi-caret-down-min"></i></button>
+                <ul class="sub-menu-list">
+                  <li><a href="#">3sub-menu</a></li>
+                  <li><a href="#">3sub-menu</a></li>
+                  <li><a href="#">3sub-menu</a></li>
                 </ul>
-            </div>
-            <nav>
-            <!-- [D] 메뉴 활성화 시 li 에 class="on" 적용 -->
-                <ul class="nav-list">
-                <li class="sub-menu">
-                    <a href="#">WELCOME<em class="ico-arrow"></em></a>
-                    <ul class="sub-menu-list">
-                    <li class="on"><a href="#">document</a></li>
-                    <li class="sub-menu">
-                        <a href="#">tutorial<em class="ico-arrow"></em></a>
-                        <ul class="sub-menu-list">
-                        <li><a href="#">3sub-menu</a></li>
-                        <li><a href="#">3sub-menu</a></li>
-                        <li><a href="#">3sub-menu</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Q&amp;A</a></li>
-                    <li><a href="#">develope guide</a></li>
-                    <li><a href="#">API</a></li>
-                    </ul>
-                </li>
-                <li class="sub-menu">
-                    <a href="#">PAGE<em class="ico-arrow"></em></a>
-                    <ul class="sub-menu-list">
-                    <li class="on"><a href="#">document</a></li>
-                    <li class="sub-menu">
-                        <a href="#">tutorial<em class="ico-arrow"></em></a>
-                        <ul class="sub-menu-list">
-                        <li><a href="#">3sub-menu</a></li>
-                        <li><a href="#">3sub-menu</a></li>
-                        <li><a href="#">3sub-menu</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Q&amp;A</a></li>
-                    <li><a href="#">develope guide</a></li>
-                    <li><a href="#">API</a></li>
-                    </ul>
-                </li>
-                <li class="on">
-                    <a href="#">PLUGINS</a>
-                </li>
+              </li>
+              <li><a href="#">Q&amp;A</a></li>
+              <li><a href="#">develope guide</a></li>
+              <li><a href="#">API</a></li>
+            </ul>
+          </li>
+          <li class="sub-menu">
+            <a href="#">PAGE</a>
+            <button type="button" class="nav-list-button"><i class="xi-caret-down-min"></i></button>
+            <ul class="sub-menu-list">
+              <li class="on"><a href="#">document</a></li>
+              <li class="sub-menu">
+                <a href="#">tutorial<em class="ico-arrow"></em></a>
+                <ul class="sub-menu-list">
+                  <li><a href="#">3sub-menu</a></li>
+                  <li><a href="#">3sub-menu</a></li>
+                  <li><a href="#">3sub-menu</a></li>
                 </ul>
-            </nav>
-        </div>
-    </header>
+              </li>
+              <li><a href="#">Q&amp;A</a></li>
+              <li><a href="#">develope guide</a></li>
+              <li><a href="#">API</a></li>
+            </ul>
+          </li>
+          <li class="on">
+            <a href="#">PLUGINS</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
     <div class="sub-spot">
         <div class="table-txt xe-container">
             <h2>Board</h2>

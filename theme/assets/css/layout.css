@@ -273,6 +273,16 @@ header nav .nav-list > li > a {
   padding: 15px 20px;
 }
 
+header nav .nav-list-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 15px 20px;
+  border: 0;
+  background-color: transparent;
+  color: #000;
+}
+
 nav .nav-list .sub-menu-list > li > a {
   position: relative;
   padding: 15px 20px;
@@ -916,7 +926,7 @@ header nav .nav-list .sub-menu {
     float: left;
     position: relative;
     z-index: 10;
-    padding: 0 32px 0 0;
+    padding: 0 48px 0 0;
     background-color: transparent;
   }
   header nav .nav-list > li > a {
@@ -941,6 +951,11 @@ header nav .nav-list .sub-menu {
     color: #000;
     line-height: 40px;
   }
+  header nav .nav-list .sub-menu-list .nav-list-button {
+    height: 40px;
+    line-height: 40px;
+    color: #000;
+  }
   header nav .nav-list .sub-menu > a .ico-arrow {
     position: static;
     right: auto;
@@ -957,6 +972,11 @@ header nav .nav-list .sub-menu {
     margin: 0;
     padding: 10px 0;
     background-color: #fff;
+  }
+  header nav .nav-list-button {
+    right: 17px;
+    padding: 0 5px;
+    color: #fff;
   }
   header.fixed-header nav .nav-list li a {
     color: #000;

@@ -26,17 +26,17 @@
 <!--테마 전체 컬러셋 옵션 기본(클래스없음): brown, blue테마 : body.blue-theme, red테마 : body.red-theme -->
 <!--header 색상 옵션  클래스 body.black-mode, body.white-mode 상단고정해제 클래스 none-fixed -->
 <body class="body desktop">
-    <header>
+	<header>
 		<div class="xe-container">
-	        <button class="btn-toggle" type="button">
-	            <span class="blind">Toggle nav-listigation</span>
-	            <span class="icon-bar"></span>
-	            <span class="icon-bar v2"></span>
-	            <span class="icon-bar"></span>
-	        </button>
-	        <div class="brand-area">
-	            <h1><a href="00_index.html" class="link-brand">Alice</a></h1>
-	        </div>
+			<button class="btn-toggle" type="button">
+				<span class="blind">Toggle nav-listigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar v2"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<div class="brand-area">
+				<h1><a href="00_index.html" class="link-brand">Alice</a></h1>
+			</div>
 			<div class="plugin-area">
 				<!--[D] nav 메뉴와 동일하게 slideup/down 처리 및 기존에 열려 있는 레이어 닫기-->
 				<ul>
@@ -50,50 +50,53 @@
 						</ul>
 					</li>
 				</ul>
-	        </div>
-	        <nav>
-	            <ul class="nav-list">
-	            <li class="sub-menu">
-	                <a href="#">WELCOME<em class="ico-arrow"></em></a>
-	                <ul class="sub-menu-list">
-	                <li class="on"><a href="#">document</a></li>
-	                <li class="sub-menu">
-	                    <a href="#">tutorial<em class="ico-arrow"></em></a>
-	                    <ul class="sub-menu-list">
-	                    <li><a href="#">3sub-menu</a></li>
-	                    <li><a href="#">3sub-menu</a></li>
-	                    <li><a href="#">3sub-menu</a></li>
-	                    </ul>
-	                </li>
-	                <li><a href="#">Q&amp;A</a></li>
-	                <li><a href="#">develope guide</a></li>
-	                <li><a href="#">API</a></li>
-	                </ul>
-	            </li>
-	            <li class="sub-menu">
-					<a href="#">PAGE<em class="ico-arrow"></em></a>
-					<ul class="sub-menu-list">
-					<li class="on"><a href="#">document</a></li>
+			</div>
+			<nav>
+				<ul class="nav-list">
 					<li class="sub-menu">
-						<a href="#">tutorial<em class="ico-arrow"></em></a>
+						<a href="#">WELCOME</a>
+						<button type="button" class="nav-list-button"><i class="xi-caret-down-min"></i></button>
 						<ul class="sub-menu-list">
-						<li><a href="#">3sub-menu</a></li>
-						<li><a href="#">3sub-menu</a></li>
-						<li><a href="#">3sub-menu</a></li>
+							<li class="on"><a href="#">document</a></li>
+							<li class="sub-menu">
+								<a href="#">tutorial</a>
+								<button type="button" class="nav-list-button"><i class="xi-caret-down-min"></i></button>
+								<ul class="sub-menu-list">
+									<li><a href="#">3sub-menu</a></li>
+									<li><a href="#">3sub-menu</a></li>
+									<li><a href="#">3sub-menu</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Q&amp;A</a></li>
+							<li><a href="#">develope guide</a></li>
+							<li><a href="#">API</a></li>
 						</ul>
 					</li>
-					<li><a href="#">Q&amp;A</a></li>
-					<li><a href="#">develope guide</a></li>
-					<li><a href="#">API</a></li>
-					</ul>
-				</li>
-	            <li class="on">
-	                <a href="#">PLUGINS</a>
-	            </li>
-	            </ul>
-	        </nav>
+					<li class="sub-menu">
+						<a href="#">PAGE</a>
+						<button type="button" class="nav-list-button"><i class="xi-caret-down-min"></i></button>
+						<ul class="sub-menu-list">
+							<li class="on"><a href="#">document</a></li>
+							<li class="sub-menu">
+								<a href="#">tutorial<em class="ico-arrow"></em></a>
+								<ul class="sub-menu-list">
+									<li><a href="#">3sub-menu</a></li>
+									<li><a href="#">3sub-menu</a></li>
+									<li><a href="#">3sub-menu</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Q&amp;A</a></li>
+							<li><a href="#">develope guide</a></li>
+							<li><a href="#">API</a></li>
+						</ul>
+					</li>
+					<li class="on">
+						<a href="#">PLUGINS</a>
+					</li>
+				</ul>
+			</nav>
 		</div>
-    </header>
+	</header>
 
     <div class="spot-area">
 		<div id="owl-spot">
@@ -542,5 +545,5 @@
 	    }
 	}
 	</script>
-</body>
+	
 </html>
