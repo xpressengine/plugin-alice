@@ -98,7 +98,7 @@ $(document).ready(function(){
 		}
 	});
 
-	$('.sub-menu-list li a').on('click', function(){
+	$('.sub-menu-list li a, .sub-menu-list li button').on('click', function(){
 
 		var windowWidth = $(window).width();
 		var $this = $(this).next("ul");
