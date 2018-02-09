@@ -1,6 +1,6 @@
 @section('spot')
     <div class="spot-area">
-        <div id="owl-spot">
+        <div id="owl-spot" class="owl-carousel">
             @if ($config->get('slide1Image.path'))
                 <div class="item">
                     <div class="item-slide" style="background-image:url({{asset($config->get('slide1Image.path'))}})">
