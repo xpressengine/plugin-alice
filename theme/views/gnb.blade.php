@@ -9,7 +9,7 @@
 
         @if(count($menu['children']))
             <button type="button" class="nav-list-button"><i class="xi-caret-down-min"></i></button>
-            <ul class="sub-menu-list" style="display: none;">
+            <ul class="sub-menu-list">
                 @foreach($menu['children'] as $menu1)
                     {{-- depth1 --}}
                     <li class=" @if(count($menu1['children'])) sub-menu @endif @if($menu1['selected']) on @endif ">
@@ -18,7 +18,7 @@
                         </a>
                         @if(count($menu1['children']))
                             <button type="button" class="nav-list-button"><i class="xi-caret-down-min"></i></button>
-                            <ul class="sub-menu-list" style="display: none;">
+                            <ul class="sub-menu-list">
                                 @foreach($menu1['children'] as $menu2)
                                     {{-- depth2 --}}
                                     <li class="@if(count($menu2['children'])) sub-menu @endif @if($menu2['selected']) on @endif ">
