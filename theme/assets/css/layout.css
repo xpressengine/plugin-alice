@@ -283,6 +283,16 @@ header nav .nav-list-button {
   color: #000;
 }
 
+header nav .nav-list.type2 .nav-list-button {
+  width: 100%;
+  text-align: right;
+  font-size: 14px;
+}
+
+header nav .nav-list.type2 .nav-list-button i {
+  font-size: 13px;
+}
+
 nav .nav-list .sub-menu-list > li > a {
   position: relative;
   padding: 15px 20px;
@@ -422,21 +432,21 @@ header nav .nav-list .sub-menu {
   font-weight: 300;
 }
 
-.spot-area .owl-controls .owl-nav {
+.spot-area .owl-nav {
   position: absolute;
   top: 50%;
   color: #fff;
   width: 100%;
 }
 
-.spot-area .owl-controls .owl-nav .owl-prev {
+.spot-area .owl-nav .owl-prev {
   position: relative;
   float: left;
   margin-left: 30px;
   padding-left: 25px;
 }
 
-.spot-area .owl-controls .owl-nav .owl-prev:after {
+.spot-area .owl-nav .owl-prev:after {
   position: absolute;
   left: 0;
   top: 50%;
@@ -450,14 +460,14 @@ header nav .nav-list .sub-menu {
   content: "";
 }
 
-.spot-area .owl-controls .owl-nav .owl-next {
+.spot-area .owl-nav .owl-next {
   position: relative;
   float: right;
   margin-right: 30px;
   padding-right: 25px;
 }
 
-.spot-area .owl-controls .owl-nav .owl-next:after {
+.spot-area .owl-nav .owl-next:after {
   position: absolute;
   left: 0;
   top: 50%;
@@ -473,22 +483,22 @@ header nav .nav-list .sub-menu {
   right: 0;
 }
 
-.spot-area .owl-controls .owl-nav .owl-prev:hover, .spot-area .owl-controls .owl-nav .owl-next:hover {
+.spot-area .owl-nav .owl-prev:hover, .spot-area .owl-nav .owl-next:hover {
   color: #b8a18d;
 }
 
-.spot-area .owl-controls .owl-nav .owl-prev:hover:after, .spot-area .owl-controls .owl-nav .owl-next:hover:after {
+.spot-area .owl-nav .owl-prev:hover:after, .spot-area .owl-nav .owl-next:hover:after {
   background-color: #b8a18d;
 }
 
-.spot-area .owl-controls .owl-dots {
+.spot-area .owl-dots {
   position: absolute;
   bottom: 26px;
   width: 100%;
   text-align: center;
 }
 
-.spot-area .owl-controls .owl-dot {
+.spot-area .owl-dot {
   display: inline-block;
   zoom: 1;
   *display: inline;
@@ -497,7 +507,7 @@ header nav .nav-list .sub-menu {
   margin: 5px 4px;
 }
 
-.spot-area .owl-controls .owl-dot span {
+.spot-area .owl-dot span {
   display: inline-block;
   width: 30px;
   height: 2px;
@@ -505,15 +515,15 @@ header nav .nav-list .sub-menu {
   vertical-align: middle;
 }
 
-.spot-area .owl-controls .owl-dot.active span {
+.spot-area .owl-dot.active span {
   background: #b8a18d;
 }
 
-.spot-area .owl-controls.clickable .owl-dot:hover span {
+.spot-area.clickable .owl-dot:hover span {
   background: #b8a18d;
 }
 
-.spot-area .owl-controls .owl-nav {
+.spot-area .owl-nav {
   display: none;
 }
 
@@ -978,6 +988,11 @@ header nav .nav-list .sub-menu {
     padding: 0 5px;
     color: #fff;
   }
+  header nav .nav-list.type2 .nav-list-button {
+    right: 0;
+    width: 100%;
+    padding: 0 21px 0 0;
+  }
   header.fixed-header nav .nav-list li a {
     color: #000;
   }
@@ -999,7 +1014,7 @@ header nav .nav-list .sub-menu {
     -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   }
-  .spot-area .owl-controls .owl-nav {
+  .spot-area .owl-nav {
     display: block;
   }
   .sub-container > .xe-container,
@@ -1693,7 +1708,7 @@ body.desktop input, body.desktop textarea, body.desktop select, body.desktop tab
   color: #8ba9ec;
 }
 
-.blue-theme .spot-area .owl-controls .owl-nav .owl-prev:hover, .blue-theme .spot-area .owl-controls .owl-nav .owl-next:hover {
+.blue-theme .spot-area .owl-nav .owl-prev:hover, .blue-theme .spot-area .owl-nav .owl-next:hover {
   color: #8ba9ec;
 }
 
@@ -1713,11 +1728,11 @@ body.desktop input, body.desktop textarea, body.desktop select, body.desktop tab
   color: #8ba9ec;
 }
 
-.blue-theme .spot-area .owl-controls .owl-dot.active span, .blue-theme .spot-area .owl-controls.clickable .owl-dot:hover span {
+.blue-theme .spot-area .owl-dot.active span, .blue-theme .spot-area.clickable .owl-dot:hover span {
   background: #8ba9ec;
 }
 
-.blue-theme .spot-area .owl-controls .owl-nav .owl-prev:hover:after, .blue-theme .spot-area .owl-controls .owl-nav .owl-next:hover:after {
+.blue-theme .spot-area .owl-nav .owl-prev:hover:after, .blue-theme .spot-area .owl-nav .owl-next:hover:after {
   background: #8ba9ec;
 }
 
@@ -1769,7 +1784,7 @@ body.desktop input, body.desktop textarea, body.desktop select, body.desktop tab
   color: #af3333;
 }
 
-.red-theme .spot-area .owl-controls .owl-nav .owl-prev:hover, .red-theme .spot-area .owl-controls .owl-nav .owl-next:hover {
+.red-theme .spot-area .owl-nav .owl-prev:hover, .red-theme .spot-area .owl-nav .owl-next:hover {
   color: #af3333;
 }
 
@@ -1789,11 +1804,11 @@ body.desktop input, body.desktop textarea, body.desktop select, body.desktop tab
   color: #af3333;
 }
 
-.red-theme .spot-area .owl-controls .owl-dot.active span, .red-theme .spot-area .owl-controls.clickable .owl-dot:hover span {
+.red-theme .spot-area .owl-dot.active span, .red-theme .spot-area.clickable .owl-dot:hover span {
   background: #af3333;
 }
 
-.red-theme .spot-area .owl-controls .owl-nav .owl-prev:hover:after, .red-theme .spot-area .owl-controls .owl-nav .owl-next:hover:after {
+.red-theme .spot-area .owl-nav .owl-prev:hover:after, .red-theme .spot-area .owl-nav .owl-next:hover:after {
   background: #af3333;
 }
 
@@ -1827,5 +1842,3 @@ body.desktop input, body.desktop textarea, body.desktop select, body.desktop tab
     color: #af3333;
   }
 }
-
-/*# sourceMappingURL=layout.css.map */

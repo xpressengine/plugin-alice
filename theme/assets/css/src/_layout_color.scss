@@ -109,7 +109,7 @@
       color: $blue-color;
     }
   }
-  .spot-area .owl-controls .owl-nav {
+  .spot-area .owl-nav {
     .owl-prev:hover, .owl-next:hover {
       color: $blue-color;
     }
@@ -134,7 +134,7 @@
       color: $blue-color;
     }
   }
-  .spot-area .owl-controls {
+  .spot-area {
     .owl-dot.active span, &.clickable .owl-dot:hover span {
       background: $blue-color;
     }
@@ -204,7 +204,7 @@
       color: $red-color;
     }
   }
-  .spot-area .owl-controls .owl-nav {
+  .spot-area .owl-nav {
     .owl-prev:hover, .owl-next:hover {
       color: $red-color;
     }
@@ -229,7 +229,7 @@
       color: $red-color;
     }
   }
-  .spot-area .owl-controls {
+  .spot-area {
     .owl-dot.active span, &.clickable .owl-dot:hover span {
       background: $red-color;
     }

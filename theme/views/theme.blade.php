@@ -8,7 +8,7 @@
 {{-- stylesheet --}}
 {{ app('xe.frontend')->css([
     'assets/core/xe-ui-component/xe-ui-component.css',
-    $theme::asset('css/owl.carousel.css'),
+    $theme::asset('css/owl.carousel.min.css'),
     $theme::asset('css/layout.css'),
     asset('assets/vendor/XEIcon/xeicon.min.css'),
 ])->load() }}
