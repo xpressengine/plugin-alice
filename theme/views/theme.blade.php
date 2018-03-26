@@ -10,7 +10,7 @@
     'assets/core/xe-ui-component/xe-ui-component.css',
     $theme::asset('css/owl.carousel.min.css'),
     $theme::asset('css/layout.css'),
-    asset('assets/vendor/XEIcon/xeicon.min.css'),
+    asset('https://cdn.jsdelivr.net/npm/xeicon@2.3/xeicon.min.css'),
 ])->load() }}
 
 {{-- script --}}
