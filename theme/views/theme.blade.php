@@ -32,9 +32,8 @@
 @endsection
 
 {{ app('xe.frontend')->html('alice.link')->content("
-<script>
-    jQuery(function($) {
-
+    <script>
+    window.jQuery(function($) {
         $('.auth-toggle').click(function(e) {
             e.preventDefault();
             $('.plugin-area .toggle-menu').toggle()
@@ -48,5 +47,5 @@
             $(this).attr('src', $(this).data('basic'));
         }).parent().css('padding', '0px');
     });
-</script>
+    </script>
 ")->load() }}
