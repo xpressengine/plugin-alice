@@ -1,5 +1,5 @@
 <li class="@if(!$menuItem->basicImage && $menuItem->isSelected())on @endif sub-menu">
-    <a href="{{ url($menuItem->url) }}" target="{{ $menuItem->target }}">
+    <a href="{{ url($menuItem->url) }}" target="{{ $menuItem->target }}">asdfasdf
         @if($menuItem->basicImage)
             <img src="{{ $menuItem->isSelected() ? $menuItem->getSelectedImage() : $menuItem->basicImage }}" class="__xe_menu_image" data-hover="{{ $menuItem->getHoverImage() }}" /><em class="ico-arrow"></em>
         @else

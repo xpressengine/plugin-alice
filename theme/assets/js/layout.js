@@ -78,10 +78,7 @@ window.jQuery(function ($) {
         $this.css('top', '-10px')
         if (windowWidth < (initialOffset + $this.outerWidth())) { // 서브 메뉴가 window 사이즈를 넘어갈 경우
           $this.css('left', 'auto')
-          $this.css('right', (
-            ($parentContainer.outerWidth()) +
-              ($this.outerWidth() - $this.innerWidth())
-          ) + 'px')
+          $this.css('right', (($parentContainer.outerWidth()) + ($this.outerWidth() - $this.innerWidth())) + 'px')
         } else {
           $this.css('left', $parentContainer.outerWidth() + 'px')
           $this.css('right', 'auto')
@@ -131,13 +128,23 @@ window.jQuery(function ($) {
 
     if (windowWidth < (initialOffset + $this.outerWidth())) { // 서브 메뉴가 window 사이즈를 넘어갈 경우
       $this.css('left', 'auto')
-      $this.css('right', (
-        ($parentContainer.outerWidth()) +
-          ($this.outerWidth() - $this.innerWidth())
-      ) + 'px')
+      $this.css('right', (($parentContainer.outerWidth()) + ($this.outerWidth() - $this.innerWidth())) + 'px')
     } else {
       $this.css('left', $parentContainer.outerWidth() + 'px')
       $this.css('right', 'auto')
     }
+  })
+
+  $('.auth-toggle').click(function (e) {
+    e.preventDefault()
+    $('.plugin-area .toggle-menu').toggle()
+  })
+
+  // image menu event
+  $('.__xe_menu_image').hover(function () {
+    $(this).data('basic', $(this).attr('src'))
+    $(this).attr('src', $(this).data('hover'))
+  }, function () {
+    $(this).attr('src', $(this).data('basic'))
   })
 })

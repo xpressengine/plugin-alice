@@ -14,7 +14,7 @@
         position: absolute;
         left: 50%;
         bottom: -20px;
-        content: "";
+        content: '';
         width: 104px;
         height: 8px;
         margin-left: -57px;
@@ -38,7 +38,7 @@
   }
   &.theme {
     position: relative;
-    background-color: #ECECEC;
+    background-color: #ececec;
     .content-title {
       position: absolute;
       width: 100%;
@@ -62,13 +62,13 @@
           position: absolute;
           top: 50%;
           left: 0;
-          content: "";
+          content: '';
           width: 100%;
           height: 2px;
-          background-color: #DBDBDB;
+          background-color: #dbdbdb;
         }
         &.on:after {
-          background-color: #A8866A;
+          background-color: #a8866a;
         }
         &.blue.on:after {
           background-color: $blue-color;
@@ -126,7 +126,7 @@
         position: absolute;
         top: 260px;
         left: 0;
-        content: "";
+        content: '';
         width: 50%;
         height: 362px;
         background-color: $brown-color;
@@ -140,18 +140,18 @@
         width: 100%;
         background-color: $brown-color;
         transform: skew(0deg, 5deg);
-        -ms-transform: skew(0deg, 5deg);
-        -webkit-transform: skew(0deg, 5deg);
       }
       &.blue-bg {
         background-color: $blue-color;
-        .diagonal-area, &:after {
+        .diagonal-area,
+        &:after {
           background-color: $blue-color;
         }
       }
       &.red-bg {
         background-color: $red-color;
-        .diagonal-area, &:after {
+        .diagonal-area,
+        &:after {
           background-color: $red-color;
         }
       }
@@ -162,7 +162,7 @@
     padding-bottom: 150px;
     background: url(../img/bg_welcome_tablet.jpg) 50% 100% no-repeat;
     .link-info {
-      display: inline-block;      
+      display: inline-block;
       height: 54px;
       margin-top: 50px;
       padding: 0 20px;
@@ -190,7 +190,7 @@
         top: 0;
         width: 50px;
         height: 50px;
-        background-color: #1F232F;
+        background-color: #1f232f;
         border-radius: 50px;
         color: $brown-color;
         line-height: 50px;
@@ -206,6 +206,7 @@
         line-height: 23px;
         color: #666;
         a {
+          text-decoration: underline;
           color: #666;
           &:hover {
             color: $brown-color;
@@ -220,7 +221,8 @@
   &.support {
     .support-list {
       margin-top: 80px;
-      img {}
+      img {
+      }
     }
     .xe-col-md-4 {
       position: relative;
@@ -288,7 +290,8 @@
     color: $brown-color;
     letter-spacing: 1px;
   }
-  &.involve .involve-inner a:after, &.support .xe-col-md-4 .support-txt .table-txt a:after {
+  &.involve .involve-inner a:after,
+  &.support .xe-col-md-4 .support-txt .table-txt a:after {
     position: absolute;
     right: 0;
     top: 50%;
@@ -297,9 +300,8 @@
     margin-top: -4px;
     background-color: $brown-color;
     border-radius: 1px;
-    -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg);
-    content: "";
+    content: '';
   }
   &.parallax {
     height: 500px;
@@ -337,8 +339,8 @@
         vertical-align: bottom;
         color: #fff;
         text-align: right;
-        a{
-            color: #fff;
+        a {
+          color: #fff;
         }
       }
     }
@@ -349,7 +351,7 @@
   .content {
     &.involve .involve-inner {
       text-align: left;
-      padding-top:132px;
+      padding-top: 132px;
       h2 {
         font-size: 46px;
       }
@@ -402,7 +404,8 @@
       }
     }
     &.parallax {
-      strong, .rectangle {
+      strong,
+      .rectangle {
         width: 400px;
       }
     }
@@ -515,8 +518,7 @@
         height: 480px;
         margin: 0 0 170px 0;
         background-image: url(../img/img_support.png);
-        -webkit-box-shadow: 18px 34px 14px rgba(0, 0, 0, 0.1);
-        box-shadow: 18px 34px 14px rgba(0, 0, 0, 0.1);
+        box-shadow: 18px 34px 14px rgba(0, 0, 0, .1);
         &.second {
           background-image: url(../img/img_support2.png);
         }

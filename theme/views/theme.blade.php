@@ -30,22 +30,3 @@
     <!--[D] 컨텐츠 가운데 고정형 옵션 선택의 경우 클래스 .xe-container 로 교체  -->
 @include($theme::view($config->get('layout', 'main')))
 @endsection
-
-{{ app('xe.frontend')->html('alice.link')->content("
-    <script>
-    window.jQuery(function($) {
-        $('.auth-toggle').click(function(e) {
-            e.preventDefault();
-            $('.plugin-area .toggle-menu').toggle()
-        });
-
-        // image menu event
-        $('.__xe_menu_image').hover(function () {
-            $(this).data('basic', $(this).attr('src'));
-            $(this).attr('src', $(this).data('hover'));
-        }, function () {
-            $(this).attr('src', $(this).data('basic'));
-        }).parent().css('padding', '0px');
-    });
-    </script>
-")->load() }}
