@@ -380,8 +380,6 @@ header nav .nav-list .sub-menu {
     .owl-dot {
       display: inline-block;
       zoom: 1;
-      *display: inline;
-      /*IE7 life-saver */
       height: 30px;
       margin: 5px 4px;
       span {
@@ -461,6 +459,11 @@ header nav .nav-list .sub-menu {
     .xe-container, .xe-container-fluid {
       padding-top: 40px;
       padding-bottom: 60px;
+    }
+  }
+  .footer-menu-1st {
+    img {
+      max-width: 100%;
     }
   }
   .footer-copy {

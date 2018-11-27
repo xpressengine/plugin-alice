@@ -1,5 +1,5 @@
 @foreach(menu_list($config->get('footerMenu')) as $menu)
-<div class="xe-col-sm-2">
+<div class="xe-col-sm-2 footer-menu-1st">
     <h3><a href="{{ url($menu['url']) }}">{{ $menu['link'] }}</a></h3>
 
     @if(count($menu['children']))
