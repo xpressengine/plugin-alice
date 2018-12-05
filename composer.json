@@ -22,9 +22,7 @@
     "xpressengine": {
       "title": "Alice Theme",
       "screenshots": [
-        "screenshots/main.png",
-        "screenshots/sub.png",
-        "screenshots/site.png"
+        "screenshots/main.png"
       ],
       "icon": "icon.png",
       "component": {
