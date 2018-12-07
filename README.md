@@ -19,7 +19,7 @@ $ php artisan plugin:install alice
 - 다음의 페이지에서 다운로드
     * https://store.xpressengine.io/plugins/alice
     * https://github.com/xpressengine/plugin-alice/releases
-- 프로젝트의 `plugin` 디렉토리 아래 `alice` 디렉토리명으로 압축해제
+- 프로젝트의 `plugins` 디렉토리 아래 `alice` 디렉토리명으로 압축해제
 - `alice` 디렉토리 이동 후 `composer dump` 명령 실행
 
 # Usage
