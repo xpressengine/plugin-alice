@@ -9,8 +9,8 @@
         <div class="brand-area">
             <h1>
                 <a href="{{ url('/') }}" class="link-brand">
-                @if($config->get('logoImage.path'))
-                    <img src="{{ $config->get('logoImage.path') }}" alt="{{ xe_trans($config->get('logoText', '')) }}"/>
+                @if($config->get('logoImage.id'))
+                    <img src="{{ \Xpressengine\Media\Models\Image::find($config->get('logoImage.id'))->url() }}" alt="{{ xe_trans($config->get('logoText', '')) }}"/>
                 @else
                     {!! xe_trans($config->get('logoText', 'Alice')) !!}
                 @endif
@@ -55,8 +55,8 @@
             <div class="xe-col-sm-3">
                 <div class="brand-area">
                     <a href="{{ url('/') }}" class="link-brand">
-                        @if($config->get('footerLogoImage.path'))
-                            <img src="{{ $config->get('footerLogoImage.path') }}" alt="{{ xe_trans($config->get('footerLogoText', 'Alice')) }}"/>
+                        @if($config->get('footerLogoImage.id'))
+                            <img src="{{ \Xpressengine\Media\Models\Image::find($config->get('footerLogoImage.id'))->url() }}" alt="{{ xe_trans($config->get('footerLogoText', 'Alice')) }}"/>
                         @else
                             {!! xe_trans($config->get('footerLogoText', 'Alice')) !!}
                         @endif
