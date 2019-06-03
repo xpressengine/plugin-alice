@@ -1,6 +1,6 @@
 {
   "name": "xpressengine-plugin/alice",
-  "description": "This Package is Xpressengine Plugin - Alice Theme.",
+  "description": "이 플러그인은 XE3에서 테마를 제공합니다.",
   "keywords": [
     "xpressengine",
     "plugin",
@@ -12,7 +12,7 @@
   "type": "xpressengine-plugin",
   "authors": [
     {
-      "name": "xpressengine",
+      "name": "XE Developers",
       "email": "developers@xpressengine.com",
       "homepage": "https://xpressengine.io",
       "role": "Developer"
