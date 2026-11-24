@@ -84,6 +84,34 @@ return [
             ]
         ],
 
+        /* 서브페이지 사이드바 설정 */
+        [
+            'section' => [
+                'class' => 'sidebar-section',
+                'title' => '서브페이지 사이드바 설정'
+            ],
+            'fields' => [
+                'sidebar' => [
+                    '_type' => 'select',
+                    'label' => '사이드바 표시 여부',
+                    'options' => [
+                        'no-snb' => '표시 안 함',
+                        'use-snb' => '표시'
+                    ],
+                    'description' => '서브페이지용 레이아웃의 PC 화면(1200px 이상)에 표시됩니다'
+                ],
+                'sidebarTitle' => [
+                    '_type' => 'langText',
+                    'label' => '사이드바 제목',
+                    'placeholder' => '비워두면 제목을 표시하지 않습니다',
+                ],
+                'sidebarMenu' => [
+                    '_type' => 'menu',
+                    'label' => '사이드바 메뉴 선택',
+                ],
+            ]
+        ],
+
         /* 헤더 설정 */
         [
             'section' => [
@@ -217,6 +245,7 @@ return [
         'frame.blade.php',
         'main.blade.php',
         'sub.blade.php',
+        'snb.blade.php',
         'gnb.blade.php',
         'fnb.blade.php'
     ]

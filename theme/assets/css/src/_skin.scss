@@ -640,12 +640,31 @@ header nav .nav-list .sub-menu {
         background-color: $brown-color;
       }
       &.sub-item {
-        > a i {
-          float: right;
-          margin-top: 3px;
+        position: relative;
+        > a {
+          padding-right: 30px;
         }
-        &.open > a i {
+        > ul {
           display: none;
+        }
+        > .snb-toggle {
+          position: absolute;
+          right: 0;
+          top: 3px;
+          z-index: 1;
+          padding: 0;
+          border: 0;
+          background: none;
+          font-size: 15px;
+          line-height: 1;
+          color: #35373d;
+          cursor: pointer;
+        }
+        &.open > ul {
+          display: block;
+        }
+        &.open > .snb-toggle i {
+          opacity: 0;
         }
       }
     }
@@ -656,7 +675,8 @@ header nav .nav-list .sub-menu {
   &:after {
     background-color: transparent;
   }
-  >.xe-container{
+  >.xe-container,
+  >.xe-container-fluid{
     .snb {
       display: none;
     }
@@ -887,13 +907,11 @@ header nav .nav-list .sub-menu {
   .sub-container{
     >.xe-container,
     >.xe-container-fluid{
-      position: relative;
+      >.xe-row {
+        display: flex;
+      }
       .sub-content {
-        position: absolute;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        height: 100%;
+        position: relative;
         padding-left: 45px;
       }
     }

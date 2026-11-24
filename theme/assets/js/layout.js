@@ -135,6 +135,13 @@ window.jQuery(function ($) {
     }
   })
 
+  // 사이드바 하위 메뉴 펼치기/접기
+  $(document).on('click', '.snb-toggle', function () {
+    var isOpen = $(this).parent().toggleClass('open').hasClass('open')
+
+    $(this).attr('aria-expanded', String(isOpen))
+  })
+
   $('.auth-toggle').click(function (e) {
     e.preventDefault()
     $('.plugin-area .toggle-menu').toggle()
