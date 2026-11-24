@@ -16,7 +16,7 @@
 @endsection
 
 <div id="sub-container" class="sub-container">
-    <div class="@if ($config->get('subContentsAreaType') == 'extend') xe-container-fluid @else xe-container @endif">
+    <div class="{{ $config->get('contentAreaType') === 'xe-container' ? 'xe-container' : 'xe-container-fluid' }}">
         <!-- snb -->
         <div class="xe-row">
             <div class="xe-col-sm-3 snb">

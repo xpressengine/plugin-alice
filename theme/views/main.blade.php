@@ -41,7 +41,7 @@
     </div>
 @endsection
 
-<div id="content" class="@if ($config->get('mainContentsAreaType', 'extend') == 'extend') xe-container-fluid @else xe-container @endif">
+<div id="content" class="{{ $config->get('contentAreaType') === 'xe-container' ? 'xe-container' : 'xe-container-fluid' }}">
 {!! $content !!}
 </div>
 
