@@ -45,7 +45,6 @@
 @section('spot')
 @show
 
-<!--[D] 컨텐츠 가운데 고정형 옵션 선택의 경우 클래스 .xe-container 로 교체  -->
 @section('theme_content')
 @show
 

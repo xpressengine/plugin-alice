@@ -124,16 +124,6 @@
       color: $blue-color;
     }
   }
-  .content {
-    &.stater .start-guide {
-      i, dd a:hover {
-        color: $blue-color;
-      }
-    }
-    &.involve .involve-inner a, &.support .xe-col-md-4 .support-txt .table-txt a {
-      color: $blue-color;
-    }
-  }
   .spot-area {
     .owl-dot.active span, &.clickable .owl-dot:hover span {
       background: $blue-color;
@@ -150,14 +140,6 @@
   .sub-container .snb li {
     &.open > a:after, ul li.on > a:after {
       background: $blue-color;
-    }
-  }
-  .content {
-    &.welcome .link-info:hover, &.involve .involve-inner a:after, &.support .xe-col-md-4 .support-txt .table-txt a:after {
-      background: $blue-color;
-    }
-    &.parallax .rectangle {
-      border-color: $blue-color;
     }
   }
 }
@@ -219,16 +201,6 @@
       color: $red-color;
     }
   }
-  .content {
-    &.stater .start-guide {
-      i, dd a:hover {
-        color: $red-color;
-      }
-    }
-    &.involve .involve-inner a, &.support .xe-col-md-4 .support-txt .table-txt a {
-      color: $red-color;
-    }
-  }
   .spot-area {
     .owl-dot.active span, &.clickable .owl-dot:hover span {
       background: $red-color;
@@ -245,14 +217,6 @@
   .sub-container .snb li {
     &.open > a:after, ul li.on > a:after {
       background: $red-color;
-    }
-  }
-  .content {
-    &.welcome .link-info:hover, &.involve .involve-inner a:after, &.support .xe-col-md-4 .support-txt .table-txt a:after {
-      background: $red-color;
-    }
-    &.parallax .rectangle {
-      border-color: $red-color;
     }
   }
 }

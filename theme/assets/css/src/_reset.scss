@@ -8,27 +8,9 @@ header {
 }
 
 .content {
-  &.welcome h2, &.involve .involve-inner h2 {
-    margin: 0;
-    padding: 0;
-  }
-}
-
-.stater-list {
-  margin: 0;
-  padding: 0;
-}
-
-.content {
   p {
     margin: 0;
     padding: 0;
-  }
-  &.stater .start-guide {
-    dl, dd {
-      margin: 0;
-      padding: 0;
-    }
   }
 }
 
@@ -39,15 +21,9 @@ header {
   }
 }
 
-.footer-copy p, .footer .footer-text, .content.support .xe-col-md-4 .support-txt .table-txt dl, .snb ul, .plugin-area ul {
+.footer-copy p, .footer .footer-text, .snb ul, .plugin-area ul {
   margin: 0;
   padding: 0;
-}
-
-.content {
-  &.welcome .link-info, &.involve .involve-inner a {
-    text-decoration: none;
-  }
 }
 
 .footer {
@@ -64,13 +40,11 @@ nav .nav-list {
 }
 
 .link-brand,
-.content.support .xe-col-md-4 .support-txt .table-txt a,
-.sub-container .snb li a,
-.rectangle a {
+.sub-container .snb li a {
   text-decoration: none;
 }
 
-.stater-list, .footer ul, .snb li, .plugin-area li {
+.footer ul, .snb li, .plugin-area li {
   list-style: none;
 }
 
