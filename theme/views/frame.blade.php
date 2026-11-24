@@ -87,7 +87,7 @@
                 <div class="xe-col-sm-6">
                     <p>{{$config->get('copyright', '')}}</p>
                 </div>
-                <div class="xe-col-sm-6">
+                <div class="xe-col-sm-6 footer-copy-side">
 
                     @if($config->get('useMultiLang', 'Y') === 'Y')
                     <div class="xe-form-group">
@@ -102,7 +102,7 @@
                     </div>
                     @endif
 
-                    <p class="float-right">Made by <a href="http://xpressengine.io">XE</a></p>
+                    <p class="float-right">Made by <a href="https://www.xpressengine.com">XpressEngine</a></p>
                 </div>
             </div>
         </div>

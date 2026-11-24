@@ -462,6 +462,7 @@ header nav .nav-list .sub-menu {
     }
   }
   .footer-menu-1st {
+    margin-bottom: 20px;
     img {
       max-width: 100%;
     }
@@ -485,10 +486,11 @@ header nav .nav-list .sub-menu {
     color: #fff;
   }
   .footer-text, .menu-list li a, .footer-copy p {
-    color: #35373d;
+    color: #98989f;
   }
   .footer-text {
     margin-bottom: 50px;
+    line-height: 1.8;
   }
   .menu-list li {
     &.on a, a:hover {
@@ -519,13 +521,18 @@ header nav .nav-list .sub-menu {
     margin-left: 16px;
     font-size: 23px;
   }
+  .footer-copy-side {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px 20px;
+    margin-top: 16px;
+  }
   .xe-form-group {
-    position: absolute;
-    top: 25px;
-    right: 10px;
     display: block;
-    height: 30px;
-    margin-bottom: 0;
+    height: auto;
+    margin: 0;
     .xe-btn {
       border: 1px solid #333;
       background-color: #1b1c1f;
@@ -707,16 +714,21 @@ header nav .nav-list .sub-menu {
     .footer-copy {
       padding: 20px 0;
     }
+    .footer-copy-side {
+      justify-content: flex-end;
+      margin-top: 0;
+    }
     h3 {
-      margin: 0 0 30px;
+      margin: 0 0 20px;
     }
     .link-area {
       margin-top: 0;
     }
     .xe-form-group {
-      position: absolute;
-      top: -8px;
-      right: 112px;
+      height: 30px;
+      // 버튼 높이만큼 푸터가 늘어나지 않도록 상쇄
+      margin-top: -8px;
+      margin-bottom: -8px;
     }
   }
 }

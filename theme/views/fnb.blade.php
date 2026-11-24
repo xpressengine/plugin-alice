@@ -5,7 +5,7 @@
     @if(count($menu['children']))
     <ul class="menu-list">
         @foreach($menu['children'] as $menu1)
-        <li class="@if($menu1['selected']) on @endif "><a href="{{ url($menu1['url']) }}">{{ $menu1['link'] }}</a></li>
+        <li class="@if($menu1['selected']) on @endif"><a href="{{ url($menu1['url']) }}">{{ $menu1['link'] }}</a></li>
         @endforeach
     </ul>
     @endif
