@@ -1,34 +1,30 @@
-var gulp = require('gulp')
-var $ = require('gulp-load-plugins')()
-var runSequence = require('run-sequence')
-var autoprefixer = require('gulp-autoprefixer')
+const { pipeline } = require('stream')
+const gulp = require('gulp')
+const sass = require('gulp-sass')(require('sass'))
+const postcss = require('gulp-postcss')
+const autoprefixer = require('autoprefixer')
 
-var config = {
-  isProduction: !!$.util.env.production,
-  useSourceMaps: !$.util.env.production
+const isProduction = process.argv.includes('--production')
+const src = './theme/assets/css/src/*.scss'
+const dest = './theme/assets/css'
+
+function compileSass (done) {
+  pipeline(
+    gulp.src(src, { sourcemaps: !isProduction }),
+    sass({
+      style: 'compressed',
+      silenceDeprecations: ['import']
+    }),
+    postcss([autoprefixer({ cascade: false })]),
+    gulp.dest(dest, { sourcemaps: '.' }),
+    done
+  )
 }
 
-gulp.task('default', function (callback) {
-  runSequence(
-    'sass',
-    callback)
-})
+function watchSass () {
+  gulp.watch(src, compileSass)
+}
 
-gulp.task('sass', function () {
-  return gulp.src('./theme/assets/css/src/*.scss')
-    .pipe($.if(config.useSourceMaps, $.sourcemaps.init()))
-    .pipe($.plumber())
-    .pipe($.sass({outputStyle: 'compressed'}).on('error', $.sass.logError))
-    .pipe(autoprefixer({
-      browsers: [
-        'last 2 versions'
-      ],
-      cascade: false
-    }))
-    .pipe($.if(config.useSourceMaps, $.sourcemaps.write('.')))
-    .pipe(gulp.dest('./theme/assets/css'))
-})
-
-gulp.task('watch', function () {
-  gulp.watch('**/*.scss', ['sass'])
-})
+exports.sass = compileSass
+exports.watch = watchSass
+exports.default = compileSass
